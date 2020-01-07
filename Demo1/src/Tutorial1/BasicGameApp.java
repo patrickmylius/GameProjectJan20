@@ -2,6 +2,7 @@ package Tutorial1;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.components.CollidableComponent;
@@ -11,17 +12,17 @@ import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
+import com.almasb.fxgl.time.TimerAction;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
-
+import javafx.util.Duration;
 import java.util.Map;
 
 
 //TODO - Background image
-//TODO - Spawn new Evil puff Entry sound ("NewBallEntry.wav")
 //TODO - Spawn more COIN and change point system, by amount of COIN picked up
 //TODO - Implement Speed boost
 //TODO - Implement Evil Puff Killer buff
@@ -58,9 +59,16 @@ public class BasicGameApp extends GameApplication {
     @Override
     protected void initGame() {
         FXGL.getGameWorld().addEntityFactory(new BasicGameFactory());
+        Sound sound = FXGL.getAssetLoader().loadSound("NewEvilPuffEntry.wav");
 
         evilPuff = FXGL.getGameWorld().spawn("EvilPuff", 100, 500);
-        //evilPuff.se
+        TimerAction timerAction = FXGL.getGameTimer().runAtInterval(() ->
+        {
+            evilPuff = FXGL.getGameWorld().spawn("EvilPuff", 100, 500);
+            FXGL.getAudioPlayer().playSound(sound);
+        }, Duration.seconds(10));
+        timerAction.resume();
+
 
         /** Create new Entity (Player) */
         player = FXGL.entityBuilder()
@@ -85,8 +93,6 @@ public class BasicGameApp extends GameApplication {
          .viewWithBBox("EvilPuff.png")
          .with(new CollidableComponent(true))
          .buildAndAttach(); */
-
-        //TODO - Make Evil puff spawn every 30 seconds and move random by bouncing walls...
 
 
         /** adds RIGHTWALL as entity*/
@@ -127,33 +133,8 @@ public class BasicGameApp extends GameApplication {
 
     }
 
-    /**public Entity newEnemy(double x, double y) {
-     Entity enemy = FXGL.entityBuilder()
-     .type(EntityType.ENEMY)
-     .at(0,0)
-     .viewWithBBox("EvilPuff.png")
-     .with(new CollidableComponent(true))
-     .buildAndAttach();
-
-     if (mode == GameMode.SP || mode == GameMode.MP_HOST) {
-     PhysicsComponent enemyPhysics = new PhysicsComponent();
-     enemyPhysics.setBodyType(BodyType.DYNAMIC);
-
-     FixtureDef def = new FixtureDef().density(0.3f).restitution(1.0f);
-
-     enemyPhysics.setFixtureDef(def);
-     enemyPhysics.setOnPhysicsInitialized(() -> enemyPhysics.setLinearVelocity(5 * 60, -5 * 60));
-
-     enemy.addComponent(enemyPhysics);
-     enemy.addComponent(new CollidableComponent(true));
-     enemy.addControl(new EnemyControl());
-
-
-     }
-     }*/
-
     /**
-     * Creating the unitCollision handler, runs if player and coin collides
+     * initializing physics, adding collisionHandler, Player, Coin, Enemy
      */
     @Override
     protected void initPhysics() {
@@ -306,7 +287,6 @@ public class BasicGameApp extends GameApplication {
             evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
 
         }
-
 
 
     }
