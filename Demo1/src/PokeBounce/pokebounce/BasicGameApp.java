@@ -5,6 +5,7 @@ import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.entity.Entity;
+import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
 import com.almasb.fxgl.gameplay.GameState;
 import com.almasb.fxgl.input.Input;
@@ -26,12 +27,13 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 
 //TODO - Background image
-//TODO - Spawn more COIN and change point system, by amount of COIN picked up
 //TODO - Implement Killer puff Powerup
 //TODO - Implement GAME OVER if player collides with Evil Puff
-//TODO - New Spawned EvilPuffs, Doesnt bounce walls. FIX
-//TODO - SPAWN Boss at a specific amount of points.
+//TODO - New Spawned EvilPuffs, do not bounce walls. FIX
 //TODO - LOWER PlAYER MOVEMENT TO 3-4 Pixels.
+//TODO - IMPLEMENT RESPAWN FOR PLAYER.
+//TODO - IMPLEMENT GAME RESET METHOD
+//TODO - IMPLEMENT GAMEOVER METHOD
 
 public class BasicGameApp extends GameApplication {
 
@@ -58,6 +60,7 @@ public class BasicGameApp extends GameApplication {
     private Entity leftWall;
     private Entity rightWall;
     private Entity coin;
+    private int playerLives;
 
 
     /**
@@ -91,7 +94,7 @@ public class BasicGameApp extends GameApplication {
         timerAction1.resume();
 
 
-        //TODO Fix event handler, with Coin, powerup.
+        //TODO Fix event handler, powerup.
         /** EventBus bus = getEventBus();
 
          EventHandler<PickUpEvent> handler = event -> {
@@ -294,30 +297,30 @@ public class BasicGameApp extends GameApplication {
     }
 
     @Override
-        protected void onUpdate(double trf) {
-            Point2D velocity = evilPuff.getObject("velocity");
-            evilPuff.translate(velocity);
+    protected void onUpdate(double trf) {
+        Point2D velocity = evilPuff.getObject("velocity");
+        evilPuff.translate(velocity);
 
-            if (evilPuff.getX() == leftWall.getRightX()
-                    && evilPuff.getY() < leftWall.getBottomY()
-                    && evilPuff.getBottomY() > leftWall.getY()) {
-                evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-            }
-            if (evilPuff.getRightX() == rightWall.getX()
-                    && evilPuff.getY() < rightWall.getBottomY()
-                    && evilPuff.getBottomY() > rightWall.getY()) {
-                evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-            }
-            if (evilPuff.getY() <= 0) {
-                evilPuff.setY(0);
-                evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
-            }
+        if (evilPuff.getX() == leftWall.getRightX()
+                && evilPuff.getY() < leftWall.getBottomY()
+                && evilPuff.getBottomY() > leftWall.getY()) {
+            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+        }
+        if (evilPuff.getRightX() == rightWall.getX()
+                && evilPuff.getY() < rightWall.getBottomY()
+                && evilPuff.getBottomY() > rightWall.getY()) {
+            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+        }
+        if (evilPuff.getY() <= 0) {
+            evilPuff.setY(0);
+            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+        }
 
-            if (evilPuff.getBottomY() >= 600) {
-                evilPuff.setY(600 - 55);
-                evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+        if (evilPuff.getBottomY() >= 600) {
+            evilPuff.setY(600 - 55);
+            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
 
-            }
+        }
 
 
     }
@@ -352,9 +355,11 @@ public class BasicGameApp extends GameApplication {
         textGameTimer.textProperty().bind(getGameState().intProperty("lives").asString());
 
 
-
     }
-    /** Coin point method, increases score by 250 points. */
+
+    /**
+     * Coin point method, increases score by 250 points.
+     */
     public void onCoinPickup() {
 
         if (player.isColliding(coin)) {
@@ -363,15 +368,22 @@ public class BasicGameApp extends GameApplication {
         }
     }
 
-    /** Player death method, decreases lives by 1, if player collides with Evil Puff */
+    /**
+     * Player death method, decreases lives by 1, if player collides with Evil Puff
+     */
     public void onPlayerDeath() {
         if (player.isColliding(evilPuff)) {
             getGameState().increment("lives", -1);
         }
+        if (player.isColliding(evilPuff)) {
+            playerLives--;
+        }
     }
 
 
-/** Map Strings to Scene */
+    /**
+     * Map Strings to Scene
+     */
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("pixelsMoved", 0);
@@ -380,6 +392,28 @@ public class BasicGameApp extends GameApplication {
 
     }
 
+
+    /**
+     * private boolean requestNewGame = false;
+     * <p>
+     * private void gameOver() { if (playerLives == 0) {
+     * getDisplay().showMessageBox("Demo Over, Press OK to exit", this::gameOver);
+     * }
+     * }
+     */
+
+  /**  private void reSpawn() {
+        if (player.isColliding(evilPuff) && playerLives > 0) {
+
+            player = entityBuilder()
+                    .type(EntityType.PLAYER)
+                    .at(300, 300)
+                    .viewWithBBox("PokePlayerUnit1.png")
+                    .with(new CollidableComponent(true))
+                    .buildAndAttach();
+        }
+    }
+*/
     public static void main(String[] args) {
         launch(args);
     }
