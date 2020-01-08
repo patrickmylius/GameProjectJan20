@@ -19,8 +19,6 @@ public class BasicGameFactory implements EntityFactory {
      */
     @Spawns("EvilPuff")
     public Entity EvilPuff(SpawnData data) {
-        //PhysicsComponent enemyPhysics = new PhysicsComponent();
-        //enemyPhysics.setBodyType(BodyType.DYNAMIC);
 
         return entityBuilder()
 
@@ -38,6 +36,7 @@ public class BasicGameFactory implements EntityFactory {
     public Entity newCoin(SpawnData data) {
 
         return entityBuilder()
+
                 .from(data)
                 .type(EntityType.COIN)
                 .at(getAppHeight() / (Math.random() * (20 + 1)),
