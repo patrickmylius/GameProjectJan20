@@ -1,32 +1,37 @@
-package Tutorial1;
+package PokeBounce.pokebounce;
 
+import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Sound;
-import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.components.CollidableComponent;
+import com.almasb.fxgl.gameplay.GameState;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
+import com.almasb.fxgl.physics.box2d.collision.Collision;
 import com.almasb.fxgl.time.TimerAction;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
+
 import java.util.Map;
+
+import static com.almasb.fxgl.dsl.FXGL.*;
 
 
 //TODO - Background image
 //TODO - Spawn more COIN and change point system, by amount of COIN picked up
-//TODO - Implement Speed boost
-//TODO - Implement Evil Puff Killer buff
+//TODO - Implement Killer puff Powerup
 //TODO - Implement GAME OVER if player collides with Evil Puff
+//TODO - New Spawned EvilPuffs, Doesnt bounce walls. FIX
+//TODO - SPAWN Boss at a specific amount of points.
+//TODO - LOWER PlAYER MOVEMENT TO 3-4 Pixels.
 
 public class BasicGameApp extends GameApplication {
 
@@ -42,7 +47,7 @@ public class BasicGameApp extends GameApplication {
     }
 
     /**
-     * Creates object "player"
+     * Creates variables
      */
     private Entity player;
     private boolean leftWallTouched;
@@ -52,26 +57,52 @@ public class BasicGameApp extends GameApplication {
     private Entity evilPuff;
     private Entity leftWall;
     private Entity rightWall;
+    private Entity coin;
+
 
     /**
-     * creates circle, with the radius of 20 in Black
+     * initialize game method, spawns evilPuffs, launch spawn sound.
      */
     @Override
     protected void initGame() {
-        FXGL.getGameWorld().addEntityFactory(new BasicGameFactory());
-        Sound sound = FXGL.getAssetLoader().loadSound("NewEvilPuffEntry.wav");
+        getGameWorld().addEntityFactory(new BasicGameFactory());
+        Sound sound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
 
-        evilPuff = FXGL.getGameWorld().spawn("EvilPuff", 100, 500);
-        TimerAction timerAction = FXGL.getGameTimer().runAtInterval(() ->
+        /** Spawns new EvilPuff every 20 seconds */
+        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * (10 + 1)),
+                getAppWidth() / (Math.random() * (10 + 1)));
+        TimerAction timerAction = getGameTimer().runAtInterval(() ->
         {
-            evilPuff = FXGL.getGameWorld().spawn("EvilPuff", 100, 500);
-            FXGL.getAudioPlayer().playSound(sound);
+            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * (10 + 1)),
+                    getAppWidth() / (Math.random() * (10 + 1)));
+            getAudioPlayer().playSound(sound);
         }, Duration.seconds(10));
         timerAction.resume();
 
+        /** Spawns new coin every 20 second*/
+        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (10 + 1)),
+                getAppWidth() / (Math.random() * (20 + 1)));
+        TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
+
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (10 + 1)),
+                    getAppWidth() / (Math.random() * (20 + 1)));
+            //FXGL.getAudioPlayer().playSound();
+        }, Duration.seconds(20));
+        timerAction1.resume();
+
+
+        //TODO Fix event handler, with Coin, powerup.
+        /** EventBus bus = getEventBus();
+
+         EventHandler<PickUpEvent> handler = event -> {
+         if (player.isColliding(coin))
+         };
+
+         getEventBus().addEventHandler(PickUpEvent.ANY, handler); */
+
 
         /** Create new Entity (Player) */
-        player = FXGL.entityBuilder()
+        player = entityBuilder()
                 .type(EntityType.PLAYER)
                 .at(300, 300)
                 .viewWithBBox("PokePlayerUnit1.png")
@@ -79,24 +110,16 @@ public class BasicGameApp extends GameApplication {
                 .buildAndAttach();
 
         /** Create new Entity (Coin) */
-        FXGL.entityBuilder()
-                .type(EntityType.COIN)
-                .at(350, 200)
-                .viewWithBBox(new Circle(15, Color.GOLD))
-                .with(new CollidableComponent(true))
-                .buildAndAttach();
-
-        /** Create new Entity (Evil puff)
-         Entity enemy = FXGL.entityBuilder()
-         .type(EntityType.ENEMY)
-         .at(0,0)
-         .viewWithBBox("EvilPuff.png")
+        /**FXGL.entityBuilder()
+         .type(EntityType.COIN)
+         .at(350, 200)
+         .viewWithBBox(new Circle(15, Color.GOLD))
          .with(new CollidableComponent(true))
-         .buildAndAttach(); */
+         .buildAndAttach();*/
 
 
         /** adds RIGHTWALL as entity*/
-        leftWall = FXGL.entityBuilder()
+        leftWall = entityBuilder()
                 .type(EntityType.LEFTWALL)
                 .at(-10, 0)
                 .bbox(new HitBox(BoundingShape.box(10, 600)))
@@ -105,7 +128,7 @@ public class BasicGameApp extends GameApplication {
                 .buildAndAttach();
 
         /** adds RIGHTWALL as entity*/
-        rightWall = FXGL.entityBuilder()
+        rightWall = entityBuilder()
                 .type(EntityType.RIGHTWALL)
                 .at(610, 0)
                 .bbox(new HitBox(BoundingShape.box(-10, 600)))
@@ -114,7 +137,7 @@ public class BasicGameApp extends GameApplication {
                 .buildAndAttach();
 
         /** adds TOPWALL as entity */
-        FXGL.entityBuilder()
+        entityBuilder()
                 .type(EntityType.TOPWALL)
                 .at(0, -10)
                 .bbox(new HitBox(BoundingShape.box(600, 10)))
@@ -122,7 +145,7 @@ public class BasicGameApp extends GameApplication {
                 .with(new PhysicsComponent())
                 .buildAndAttach();
         /** Implements BOTTOMWALL as entity */
-        FXGL.entityBuilder()
+        entityBuilder()
                 .type(EntityType.BOTTOMWALL)
                 .at(0, 610)
                 .bbox(new HitBox(BoundingShape.box(600, -10)))
@@ -133,30 +156,35 @@ public class BasicGameApp extends GameApplication {
 
     }
 
+
     /**
      * initializing physics, adding collisionHandler, Player, Coin, Enemy
      */
     @Override
     protected void initPhysics() {
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.COIN) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.COIN) {
 
             @Override
             protected void onCollisionBegin(Entity player, Entity coin) {
+                onCoinPickup();
                 coin.removeFromWorld();
+
             }
 
         });
 
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
             @Override
             protected void onCollisionBegin(Entity player, Entity evilPuff) {
                 player.removeFromWorld();
+                onPlayerDeath();
             }
+
 
         });
 
         /** Adds unitCollision to left wall and player unit*/
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.LEFTWALL) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.LEFTWALL) {
             @Override
             protected void onCollisionBegin(Entity player, Entity wall) {
                 leftWallTouched = true;
@@ -169,7 +197,7 @@ public class BasicGameApp extends GameApplication {
         });
 
         /** Adds unitCollision to right wall and player unit*/
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.RIGHTWALL) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.RIGHTWALL) {
             @Override
             protected void onCollisionBegin(Entity player, Entity wall) {
                 rightWallTouched = true;
@@ -182,7 +210,7 @@ public class BasicGameApp extends GameApplication {
         });
 
         /** Adds unitCollision to top wall and player unit*/
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.TOPWALL) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.TOPWALL) {
             @Override
             protected void onCollisionBegin(Entity player, Entity wall) {
                 topWallTouched = true;
@@ -195,7 +223,7 @@ public class BasicGameApp extends GameApplication {
         });
 
         /** Adds unitCollision to bottom wall and player unit*/
-        FXGL.getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.BOTTOMWALL) {
+        getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.BOTTOMWALL) {
             @Override
             protected void onCollisionBegin(Entity player, Entity wall) {
                 bottomWallTouched = true;
@@ -208,14 +236,17 @@ public class BasicGameApp extends GameApplication {
         });
     }
 
+    /**
+     * Runs theme song, loops until game is closed
+     */
     @Override
     protected void onPreInit() {
-        FXGL.loopBGM("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
+        loopBGM("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
     }
 
     @Override
     protected void initInput() {
-        Input input = FXGL.getInput();
+        Input input = getInput();
 
         input.addAction(new UserAction("Move Right") {
             @Override
@@ -224,7 +255,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateX(5); //Move right, 5 pixels
-                FXGL.getGameState().increment("pixelsMoved", +5);
+                getGameState().increment("pixelsMoved", +5);
             }
         }, KeyCode.D);
 
@@ -235,7 +266,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateX(-5); //move left 5 pixels
-                FXGL.getGameState().increment("pixelsMoved", +5);
+                getGameState().increment("pixelsMoved", +5);
             }
         }, KeyCode.A);
 
@@ -246,7 +277,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateY(-5); //move 5 pixels up
-                FXGL.getGameState().increment("pixelsMoved", +5);
+                getGameState().increment("pixelsMoved", +5);
             }
         }, KeyCode.W);
 
@@ -257,53 +288,96 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateY(5); //move 5 pixels down
-                FXGL.getGameState().increment("pixelsMoved", +5);
+                getGameState().increment("pixelsMoved", +5);
             }
         }, KeyCode.S);
     }
 
     @Override
-    protected void onUpdate(double trf) {
-        Point2D velocity = evilPuff.getObject("velocity");
-        evilPuff.translate(velocity);
+        protected void onUpdate(double trf) {
+            Point2D velocity = evilPuff.getObject("velocity");
+            evilPuff.translate(velocity);
 
-        if (evilPuff.getX() == leftWall.getRightX()
-                && evilPuff.getY() < leftWall.getBottomY()
-                && evilPuff.getBottomY() > leftWall.getY()) {
-            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-        }
-        if (evilPuff.getRightX() == rightWall.getX()
-                && evilPuff.getY() < rightWall.getBottomY()
-                && evilPuff.getBottomY() > rightWall.getY()) {
-            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-        }
-        if (evilPuff.getY() <= 0) {
-            evilPuff.setY(0);
-            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
-        }
+            if (evilPuff.getX() == leftWall.getRightX()
+                    && evilPuff.getY() < leftWall.getBottomY()
+                    && evilPuff.getBottomY() > leftWall.getY()) {
+                evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+            }
+            if (evilPuff.getRightX() == rightWall.getX()
+                    && evilPuff.getY() < rightWall.getBottomY()
+                    && evilPuff.getBottomY() > rightWall.getY()) {
+                evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+            }
+            if (evilPuff.getY() <= 0) {
+                evilPuff.setY(0);
+                evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+            }
 
-        if (evilPuff.getBottomY() >= 600) {
-            evilPuff.setY(600 - 55);
-            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+            if (evilPuff.getBottomY() >= 600) {
+                evilPuff.setY(600 - 55);
+                evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
 
-        }
+            }
 
 
     }
+
 
     @Override
     protected void initUI() {
+        /** pixels moved positioning in UI*/
         Text textPixels = new Text();
-        textPixels.setTranslateX(300); // x = 50
-        textPixels.setTranslateY(10); // y = 100
+        textPixels.setTranslateX(25); // x = 50
+        textPixels.setTranslateY(25); // y = 100
 
-        FXGL.getGameScene().addUINode(textPixels); // adds initUi to scene
-        textPixels.textProperty().bind(FXGL.getGameState().intProperty("pixelsMoved").asString()); // pixels is moved variable added to Scene as textfield
+        /** Tracks pixels moved */
+        getGameScene().addUINode(textPixels); // adds initUi to scene
+        textPixels.textProperty().bind(getGameState().intProperty("pixelsMoved").asString()); // pixels is moved variable added to Scene as textfield
+
+        /** Score positioning in UI*/
+        Text textScore = new Text();
+        textScore.setTranslateX(575);
+        textScore.setTranslateY(25);
+
+        /** Tracks Score*/
+        getGameScene().addUINode(textScore);
+        textScore.textProperty().bind(getGameState().intProperty("score").asString());
+
+        /** Player positioning in UI*/
+        Text textGameTimer = new Text();
+        textGameTimer.setTranslateX(300);
+        textGameTimer.setTranslateY(25);
+
+        getGameScene().addUINode(textGameTimer);
+        textGameTimer.textProperty().bind(getGameState().intProperty("lives").asString());
+
+
+
+    }
+    /** Coin point method, increases score by 250 points. */
+    public void onCoinPickup() {
+
+        if (player.isColliding(coin)) {
+
+            getGameState().increment("score", +250);
+        }
     }
 
+    /** Player death method, decreases lives by 1, if player collides with Evil Puff */
+    public void onPlayerDeath() {
+        if (player.isColliding(evilPuff)) {
+            getGameState().increment("lives", -1);
+        }
+    }
+
+
+/** Map Strings to Scene */
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("pixelsMoved", 0);
+        vars.put("score", 0);
+        vars.put("lives", 3);
+
     }
 
     public static void main(String[] args) {
