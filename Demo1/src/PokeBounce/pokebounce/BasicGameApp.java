@@ -20,9 +20,11 @@ import com.almasb.fxgl.time.TimerAction;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.lang.reflect.Type;
 import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
@@ -73,7 +75,7 @@ public class BasicGameApp extends GameApplication {
     protected void initGame() {
         getGameWorld().addEntityFactory(new BasicGameFactory());
         Sound evilPuffEntrySound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
-        //Sound coinEntrySound = getAssetLoader().loadSound("")
+        Sound coinEntrySound = getAssetLoader().loadSound("NewCoinEntry.wav");
 
         /** Spawns new EvilPuff every 20 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
@@ -93,7 +95,7 @@ public class BasicGameApp extends GameApplication {
 
             coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 50 ) + (1),
                     getAppWidth() / (Math.random() * 50) + (1));
-            //FXGL.getAudioPlayer().playSound();
+            FXGL.getAudioPlayer().playSound(coinEntrySound);
         }, Duration.seconds(10));
         timerAction1.resume();
 
@@ -255,7 +257,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateX(3); //Move right, 5 pixels
-                getGameState().increment("pixelsMoved", +3);
+                //getGameState().increment("pixelsMoved", +3); Tracks pixels moved right
             }
         }, KeyCode.D);
 
@@ -266,7 +268,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateX(-3); //move left 5 pixels
-                getGameState().increment("pixelsMoved", +3);
+                //getGameState().increment("pixelsMoved", +3); Tracks pixels moved left
             }
         }, KeyCode.A);
 
@@ -277,7 +279,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateY(-3); //move 5 pixels up
-                getGameState().increment("pixelsMoved", +3);
+                //getGameState().increment("pixelsMoved", +3); tracks pixels moved up
             }
         }, KeyCode.W);
 
@@ -288,7 +290,7 @@ public class BasicGameApp extends GameApplication {
                     return;
 
                 player.translateY(3); //move 5 pixels down
-                getGameState().increment("pixelsMoved", +3);
+                //getGameState().increment("pixelsMoved", +3); Tracks pixels moved down
             }
         }, KeyCode.S);
     }
@@ -303,31 +305,41 @@ public class BasicGameApp extends GameApplication {
     @Override
     protected void initUI() {
         /** pixels moved positioning in UI*/
-        Text textPixels = new Text();
-        textPixels.setTranslateX(25); // x = 50
-        textPixels.setTranslateY(25); // y = 100
+        //Text textPixels = new Text();
+        //textPixels.setTranslateX(25); // x = 50
+        //textPixels.setTranslateY(25); // y = 100
 
         /** Tracks pixels moved */
-        getGameScene().addUINode(textPixels); // adds initUi to scene sa
-        textPixels.textProperty().bind(getGameState().intProperty("pixelsMoved").asString()); // pixels is moved variable added to Scene as textfield
+        //getGameScene().addUINode(textPixels); // adds initUi to scene sa
+        //textPixels.textProperty().bind(getGameState().intProperty("pixelsMoved").asString()); // pixels is moved variable added to Scene as textfield
 
         /** Score positioning in UI*/
         Text textScore = new Text();
-        textScore.setTranslateX(550);
+        textScore.setTranslateX(75);
         textScore.setTranslateY(25);
+        textScore.setFill(Color.BLACK);
+        Font font = new Font(18);
+        textScore.setFont(font);
 
         /** Tracks Score*/
         getGameScene().addUINode(textScore);
         textScore.textProperty().bind(getGameState().intProperty("score").asString());
-        addText("Score: ", 475, 25 ).setFill(Color.GREEN);
+        addText("Score:", 10, 25 ).setFill(Color.GOLD);
+        //addText("Score:", 475, 25 ).setFill(Color.GOLD);
+
 
         /** Player lives positioning in UI*/
         Text textGameTimer = new Text();
-        textGameTimer.setTranslateX(300);
+        textGameTimer.setTranslateX(550);
         textGameTimer.setTranslateY(25);
+        textGameTimer.setFill(Color.BLACK);
+        Font f = new Font(18);
+        textGameTimer.setFont(f);
 
+        /** Tracks amount of player lives and */
         getGameScene().addUINode(textGameTimer);
         textGameTimer.textProperty().bind(getGameState().intProperty("lives").asString());
+        addText("Lives:", 490, 25).setFill(Color.BLUE);
 
 
     }
@@ -362,7 +374,6 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void initGameVars(Map<String, Object> vars) {
-        vars.put("pixelsMoved", 0);
         vars.put("score", 0);
         vars.put("lives", 3);
 
