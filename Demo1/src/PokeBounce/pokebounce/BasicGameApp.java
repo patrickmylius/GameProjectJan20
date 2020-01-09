@@ -84,12 +84,12 @@ public class BasicGameApp extends GameApplication {
         timerAction.resume();
 
         /** Spawns new coin every 15 second*/
-        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (15 + 1)),
-                getAppWidth() / (Math.random() * (15 + 1)));
+        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 15) + (1),
+                getAppWidth() / (Math.random() * 20) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (15 + 1)),
-                    getAppWidth() / (Math.random() * (15 + 1)));
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 15) + (1),
+                    getAppWidth() / (Math.random() * 20) + (1));
             //FXGL.getAudioPlayer().playSound();
         }, Duration.seconds(15));
         timerAction1.resume();
