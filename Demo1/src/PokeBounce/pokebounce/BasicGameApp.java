@@ -79,24 +79,24 @@ public class BasicGameApp extends GameApplication {
 
         /** Spawns new EvilPuff every 20 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                getAppWidth() / (Math.random() * 50) + (1));
+                getAppWidth() / - (Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
         {
             evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                    getAppWidth() / (Math.random() * 50) + (1));
+                    getAppWidth() /  (Math.random() * 200) + (1));
             getAudioPlayer().playSound(evilPuffEntrySound);
-        }, Duration.seconds(10));
+        }, Duration.seconds(6));
         timerAction.resume();
 
         /** Spawns new coin every 15 second*/
-        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 50) + (1),
-                getAppWidth() / (Math.random() * 50) + (1));
+        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
+                getAppWidth() / - (Math.random() * 600) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 50 ) + (1),
-                    getAppWidth() / (Math.random() * 50) + (1));
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600 ) + (1),
+                    getAppWidth() / - (Math.random() * 600) + (1));
             FXGL.getAudioPlayer().playSound(coinEntrySound);
-        }, Duration.seconds(10));
+        }, Duration.seconds(3));
         timerAction1.resume();
 
 
@@ -176,7 +176,7 @@ public class BasicGameApp extends GameApplication {
                 if (playerLives > 0) {
                     runOnce(() -> {
                         respawn();
-                    }, Duration.seconds(2));
+                    }, Duration.seconds(1));
 
                 }
                 //getDisplay().showBox("Game over", getGameController();
@@ -325,7 +325,6 @@ public class BasicGameApp extends GameApplication {
         getGameScene().addUINode(textScore);
         textScore.textProperty().bind(getGameState().intProperty("score").asString());
         addText("Score:", 10, 25 ).setFill(Color.GOLD);
-        //addText("Score:", 475, 25 ).setFill(Color.GOLD);
 
 
         /** Player lives positioning in UI*/
@@ -360,12 +359,10 @@ public class BasicGameApp extends GameApplication {
      * Player death method, decreases lives by 1, if player collides with Evil Puff
      */
     public void onPlayerDeath() {
-        if (player.isColliding(evilPuff)) {
+
             getGameState().increment("lives", -1);
-        }
-        if (player.isColliding(evilPuff)) {
             playerLives--;
-        }
+
     }
 
 
@@ -389,18 +386,6 @@ public class BasicGameApp extends GameApplication {
      * }
      */
 
-  /*  private void reSpawn() {
-        if (player.isColliding(evilPuff) && playerLives > 0) {
-
-            player = entityBuilder()
-                    .type(EntityType.PLAYER)
-                    .at(300, 300)
-                    .viewWithBBox("PokePlayerUnit1.png")
-                    .with(new CollidableComponent(true))
-                    .buildAndAttach();
-        }
-    }
-*/
 
     private void respawn() {
         player = spawn("Player", 300, 300);

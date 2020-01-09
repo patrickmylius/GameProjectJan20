@@ -35,7 +35,7 @@ public class BasicGameFactory implements EntityFactory {
 
                 .type(EntityType.ENEMY)
                 .from(data)
-                .viewWithBBox("EvilPuff.png")
+                .viewWithBBox("EvilPuff1.png")
                 .with(new CollidableComponent(true))
                 .with("velocity", new Point2D((Math.random() * 1) + 0.75, (Math.random() * 1) + 0.75))
                 .with(new EvilPuffComponent())
@@ -50,8 +50,8 @@ public class BasicGameFactory implements EntityFactory {
 
                 .from(data)
                 .type(EntityType.COIN)
-                .at(getAppHeight() / (Math.random() * (20 + 1)),
-                        getAppWidth() / (Math.random() * (20 + 1)))
+                .at(getAppHeight() / (Math.random() * 10) + (1),
+                        getAppWidth() / (Math.random() * 10) + (1))
                 .viewWithBBox(new Circle(15, Color.GOLD))
                 .with(new CollidableComponent(true))
                 .build();
