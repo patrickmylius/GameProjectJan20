@@ -4,6 +4,7 @@ import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Sound;
+import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
@@ -18,6 +19,7 @@ import com.almasb.fxgl.physics.box2d.collision.Collision;
 import com.almasb.fxgl.time.TimerAction;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
@@ -28,13 +30,13 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 //TODO - Background image
 //TODO - Implement Killer puff Powerup
-//TODO - Implement GAME OVER if player collides with Evil Puff
-//TODO - New Spawned EvilPuffs, do not bounce walls. FIX
-//TODO - LOWER PlAYER MOVEMENT TO 3-4 Pixels.
-//TODO - IMPLEMENT RESPAWN FOR PLAYER.
+//TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAME RESET METHOD
 //TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - COIN SPAWN SOUND
+//TODO - COIN DESIGN, implemented
+//TODO - Player dead sound
+//TODO - Player dead DESIGN
 
 public class BasicGameApp extends GameApplication {
 
@@ -70,7 +72,8 @@ public class BasicGameApp extends GameApplication {
     @Override
     protected void initGame() {
         getGameWorld().addEntityFactory(new BasicGameFactory());
-        Sound sound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
+        Sound evilPuffEntrySound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
+        //Sound coinEntrySound = getAssetLoader().loadSound("")
 
         /** Spawns new EvilPuff every 20 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
@@ -79,39 +82,33 @@ public class BasicGameApp extends GameApplication {
         {
             evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
                     getAppWidth() / (Math.random() * 50) + (1));
-            getAudioPlayer().playSound(sound);
+            getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(10));
         timerAction.resume();
 
         /** Spawns new coin every 15 second*/
-        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 15) + (1),
-                getAppWidth() / (Math.random() * 20) + (1));
+        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 50) + (1),
+                getAppWidth() / (Math.random() * 50) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 15) + (1),
-                    getAppWidth() / (Math.random() * 20) + (1));
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 50 ) + (1),
+                    getAppWidth() / (Math.random() * 50) + (1));
             //FXGL.getAudioPlayer().playSound();
-        }, Duration.seconds(15));
+        }, Duration.seconds(10));
         timerAction1.resume();
 
 
-        //TODO Fix event handler, powerup.
-        /** EventBus bus = getEventBus();
+
+        /* EventBus bus = getEventBus();
 
          EventHandler<PickUpEvent> handler = event -> {
          if (player.isColliding(coin))
          };
 
          getEventBus().addEventHandler(PickUpEvent.ANY, handler); */
-
-
         /** Create new Entity (Player) */
-        player = entityBuilder()
-                .type(EntityType.PLAYER)
-                .at(300, 300)
-                .viewWithBBox("PokePlayerUnit1.png")
-                .with(new CollidableComponent(true))
-                .buildAndAttach();
+
+        player = FXGL.spawn("Player", new Point2D(300, 300));
 
 
         /** adds RIGHTWALL as entity*/
@@ -171,9 +168,16 @@ public class BasicGameApp extends GameApplication {
 
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
             @Override
-            protected void onCollisionBegin(Entity player, Entity evilPuff) {
+            protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
                 player.removeFromWorld();
                 onPlayerDeath();
+                if (playerLives > 0) {
+                    runOnce(() -> {
+                        respawn();
+                    }, Duration.seconds(2));
+
+                }
+                //getDisplay().showBox("Game over", getGameController();
             }
 
 
@@ -291,8 +295,8 @@ public class BasicGameApp extends GameApplication {
 
     @Override
     protected void onUpdate(double trf) {
-
-
+        if (playerLives == 0)
+            getDisplay().showMessageBox("Game over");
      }
 
 
@@ -309,14 +313,15 @@ public class BasicGameApp extends GameApplication {
 
         /** Score positioning in UI*/
         Text textScore = new Text();
-        textScore.setTranslateX(575);
+        textScore.setTranslateX(550);
         textScore.setTranslateY(25);
 
         /** Tracks Score*/
         getGameScene().addUINode(textScore);
         textScore.textProperty().bind(getGameState().intProperty("score").asString());
+        addText("Score: ", 475, 25 ).setFill(Color.GREEN);
 
-        /** Player positioning in UI*/
+        /** Player lives positioning in UI*/
         Text textGameTimer = new Text();
         textGameTimer.setTranslateX(300);
         textGameTimer.setTranslateY(25);
@@ -364,7 +369,7 @@ public class BasicGameApp extends GameApplication {
     }
 
 
-    /**
+    /*
      * private boolean requestNewGame = false;
      * <p>
      * private void gameOver() { if (playerLives == 0) {
@@ -373,7 +378,7 @@ public class BasicGameApp extends GameApplication {
      * }
      */
 
-  /**  private void reSpawn() {
+  /*  private void reSpawn() {
         if (player.isColliding(evilPuff) && playerLives > 0) {
 
             player = entityBuilder()
@@ -385,6 +390,10 @@ public class BasicGameApp extends GameApplication {
         }
     }
 */
+
+    private void respawn() {
+        player = spawn("Player", 300, 300);
+    }
     public static void main(String[] args) {
         launch(args);
     }

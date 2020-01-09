@@ -16,7 +16,6 @@ public class EvilPuffComponent extends Component {
         if (entity.getRightX() >= 600
                 && entity.getBottomY() <= 600) {
             entity.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-            System.out.println("test");
         }
         if (entity.getY() <= 0) {
             entity.setY(0);

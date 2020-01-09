@@ -14,6 +14,17 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 public class BasicGameFactory implements EntityFactory {
 
+    @Spawns("Player")
+    public Entity Player(SpawnData data) {
+
+        return entityBuilder()
+                .type(EntityType.PLAYER)
+                .from(data)
+                .viewWithBBox("PokePlayerUnit1.png")
+                .with(new CollidableComponent(true))
+                .build();
+    }
+
     /**
      * Spawns and create, evilPuff
      */
