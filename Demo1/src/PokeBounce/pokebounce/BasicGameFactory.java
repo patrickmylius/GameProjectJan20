@@ -27,8 +27,8 @@ public class BasicGameFactory implements EntityFactory {
                 .viewWithBBox("EvilPuff.png")
                 .with(new CollidableComponent(true))
                 .with("velocity", new Point2D(1, 1))
+                .with(new EvilPuffComponent())
                 .build();
-
 
     }
 

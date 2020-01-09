@@ -34,6 +34,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - IMPLEMENT RESPAWN FOR PLAYER.
 //TODO - IMPLEMENT GAME RESET METHOD
 //TODO - IMPLEMENT GAMEOVER METHOD
+//TODO - COIN SPAWN SOUND
 
 public class BasicGameApp extends GameApplication {
 
@@ -60,7 +61,7 @@ public class BasicGameApp extends GameApplication {
     private Entity leftWall;
     private Entity rightWall;
     private Entity coin;
-    private int playerLives;
+    private int playerLives = 3;
 
 
     /**
@@ -82,15 +83,15 @@ public class BasicGameApp extends GameApplication {
         }, Duration.seconds(10));
         timerAction.resume();
 
-        /** Spawns new coin every 20 second*/
-        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (10 + 1)),
-                getAppWidth() / (Math.random() * (20 + 1)));
+        /** Spawns new coin every 15 second*/
+        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (15 + 1)),
+                getAppWidth() / (Math.random() * (15 + 1)));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (10 + 1)),
-                    getAppWidth() / (Math.random() * (20 + 1)));
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * (15 + 1)),
+                    getAppWidth() / (Math.random() * (15 + 1)));
             //FXGL.getAudioPlayer().playSound();
-        }, Duration.seconds(20));
+        }, Duration.seconds(15));
         timerAction1.resume();
 
 
@@ -298,32 +299,32 @@ public class BasicGameApp extends GameApplication {
 
     @Override
     protected void onUpdate(double trf) {
-        Point2D velocity = evilPuff.getObject("velocity");
-        evilPuff.translate(velocity);
+    /**    Point2D velocity = evilPuff.getObject("velocity");
+     evilPuff.translate(velocity);
 
-        if (evilPuff.getX() == leftWall.getRightX()
-                && evilPuff.getY() < leftWall.getBottomY()
-                && evilPuff.getBottomY() > leftWall.getY()) {
-            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-        }
-        if (evilPuff.getRightX() == rightWall.getX()
-                && evilPuff.getY() < rightWall.getBottomY()
-                && evilPuff.getBottomY() > rightWall.getY()) {
-            evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-        }
-        if (evilPuff.getY() <= 0) {
-            evilPuff.setY(0);
-            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
-        }
+     if (evilPuff.getX() == leftWall.getRightX()
+     && evilPuff.getY() < leftWall.getBottomY()
+     && evilPuff.getBottomY() > leftWall.getY()) {
+     evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+     }
+     if (evilPuff.getRightX() == rightWall.getX()
+     && evilPuff.getY() < rightWall.getBottomY()
+     && evilPuff.getBottomY() > rightWall.getY()) {
+     evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
+     }
+     if (evilPuff.getY() <= 0) {
+     evilPuff.setY(0);
+     evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+     }
 
-        if (evilPuff.getBottomY() >= 600) {
-            evilPuff.setY(600 - 55);
-            evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
+     if (evilPuff.getBottomY() >= 600) {
+     evilPuff.setY(600 - 55);
+     evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
 
-        }
+     }*/
 
 
-    }
+     }
 
 
     @Override
@@ -334,7 +335,7 @@ public class BasicGameApp extends GameApplication {
         textPixels.setTranslateY(25); // y = 100
 
         /** Tracks pixels moved */
-        getGameScene().addUINode(textPixels); // adds initUi to scene
+        getGameScene().addUINode(textPixels); // adds initUi to scene sa
         textPixels.textProperty().bind(getGameState().intProperty("pixelsMoved").asString()); // pixels is moved variable added to Scene as textfield
 
         /** Score positioning in UI*/
@@ -366,6 +367,7 @@ public class BasicGameApp extends GameApplication {
 
             getGameState().increment("score", +250);
         }
+
     }
 
     /**
@@ -381,7 +383,7 @@ public class BasicGameApp extends GameApplication {
     }
 
 
-    /**
+    /****
      * Map Strings to Scene
      */
     @Override
