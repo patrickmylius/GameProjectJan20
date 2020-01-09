@@ -73,12 +73,12 @@ public class BasicGameApp extends GameApplication {
         Sound sound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
 
         /** Spawns new EvilPuff every 20 seconds */
-        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * (10 + 1)),
-                getAppWidth() / (Math.random() * (10 + 1)));
+        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+                getAppWidth() / (Math.random() * 50) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
         {
-            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * (10 + 1)),
-                    getAppWidth() / (Math.random() * (10 + 1)));
+            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+                    getAppWidth() / (Math.random() * 50) + (1));
             getAudioPlayer().playSound(sound);
         }, Duration.seconds(10));
         timerAction.resume();
@@ -112,14 +112,6 @@ public class BasicGameApp extends GameApplication {
                 .viewWithBBox("PokePlayerUnit1.png")
                 .with(new CollidableComponent(true))
                 .buildAndAttach();
-
-        /** Create new Entity (Coin) */
-        /**FXGL.entityBuilder()
-         .type(EntityType.COIN)
-         .at(350, 200)
-         .viewWithBBox(new Circle(15, Color.GOLD))
-         .with(new CollidableComponent(true))
-         .buildAndAttach();*/
 
 
         /** adds RIGHTWALL as entity*/
@@ -258,8 +250,8 @@ public class BasicGameApp extends GameApplication {
                 if (rightWallTouched) //If player unit collides with right wall,"Move Right" function stops until false.
                     return;
 
-                player.translateX(5); //Move right, 5 pixels
-                getGameState().increment("pixelsMoved", +5);
+                player.translateX(3); //Move right, 5 pixels
+                getGameState().increment("pixelsMoved", +3);
             }
         }, KeyCode.D);
 
@@ -269,8 +261,8 @@ public class BasicGameApp extends GameApplication {
                 if (leftWallTouched) //If player unit collides with left wall,"Move Left" function stops until false.
                     return;
 
-                player.translateX(-5); //move left 5 pixels
-                getGameState().increment("pixelsMoved", +5);
+                player.translateX(-3); //move left 5 pixels
+                getGameState().increment("pixelsMoved", +3);
             }
         }, KeyCode.A);
 
@@ -280,8 +272,8 @@ public class BasicGameApp extends GameApplication {
                 if (topWallTouched) //If player unit collides with top wall,"Move Up" function stops until false.
                     return;
 
-                player.translateY(-5); //move 5 pixels up
-                getGameState().increment("pixelsMoved", +5);
+                player.translateY(-3); //move 5 pixels up
+                getGameState().increment("pixelsMoved", +3);
             }
         }, KeyCode.W);
 
@@ -291,37 +283,14 @@ public class BasicGameApp extends GameApplication {
                 if (bottomWallTouched) //If player unit collides with bottom wall,"Move Down" function stops until false.
                     return;
 
-                player.translateY(5); //move 5 pixels down
-                getGameState().increment("pixelsMoved", +5);
+                player.translateY(3); //move 5 pixels down
+                getGameState().increment("pixelsMoved", +3);
             }
         }, KeyCode.S);
     }
 
     @Override
     protected void onUpdate(double trf) {
-    /**    Point2D velocity = evilPuff.getObject("velocity");
-     evilPuff.translate(velocity);
-
-     if (evilPuff.getX() == leftWall.getRightX()
-     && evilPuff.getY() < leftWall.getBottomY()
-     && evilPuff.getBottomY() > leftWall.getY()) {
-     evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-     }
-     if (evilPuff.getRightX() == rightWall.getX()
-     && evilPuff.getY() < rightWall.getBottomY()
-     && evilPuff.getBottomY() > rightWall.getY()) {
-     evilPuff.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
-     }
-     if (evilPuff.getY() <= 0) {
-     evilPuff.setY(0);
-     evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
-     }
-
-     if (evilPuff.getBottomY() >= 600) {
-     evilPuff.setY(600 - 55);
-     evilPuff.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
-
-     }*/
 
 
      }

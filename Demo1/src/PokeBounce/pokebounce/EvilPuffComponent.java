@@ -9,8 +9,6 @@ public class EvilPuffComponent extends Component {
         Point2D velocity = entity.getObject("velocity");
         entity.translate(velocity);
 
-        System.out.println(entity.getRightX());
-
         if (entity.getX() <= 0
                 && entity.getBottomY() <= 600) {
             entity.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
