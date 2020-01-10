@@ -4,6 +4,7 @@ import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Sound;
+import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.Spawns;
@@ -57,6 +58,7 @@ public class BasicGameApp extends GameApplication {
      * Creates variables
      */
     private Entity player;
+    private Entity backGroundImg;
     private boolean leftWallTouched;
     private boolean rightWallTouched;
     private boolean topWallTouched;
@@ -79,25 +81,27 @@ public class BasicGameApp extends GameApplication {
 
         /** Spawns new EvilPuff every 20 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                getAppWidth() / - (Math.random() * 200) + (1));
+                getAppWidth() / -(Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
         {
             evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                    getAppWidth() /  (Math.random() * 200) + (1));
+                    getAppWidth() / (Math.random() * 200) + (1));
             getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(6));
         timerAction.resume();
 
         /** Spawns new coin every 15 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
-                getAppWidth() / - (Math.random() * 600) + (1));
+                getAppWidth() / -(Math.random() * 600) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600 ) + (1),
-                    getAppWidth() / - (Math.random() * 600) + (1));
+            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
+                    getAppWidth() / -(Math.random() * 600) + (1));
             FXGL.getAudioPlayer().playSound(coinEntrySound);
-        }, Duration.seconds(3));
+        }, Duration.seconds(5));
         timerAction1.resume();
+
+
 
 
 
@@ -111,6 +115,9 @@ public class BasicGameApp extends GameApplication {
         /** Create new Entity (Player) */
 
         player = FXGL.spawn("Player", new Point2D(300, 300));
+
+        //backGroundImg = FXGL.spawn("BackGroundImage", new Point2D(0, 0));
+        getGameScene().setBackgroundRepeat("backGroundGif.gif");
 
 
         /** adds RIGHTWALL as entity*/
@@ -299,7 +306,8 @@ public class BasicGameApp extends GameApplication {
     protected void onUpdate(double trf) {
         if (playerLives == 0)
             getDisplay().showMessageBox("Game over");
-     }
+
+    }
 
 
     @Override
@@ -324,7 +332,7 @@ public class BasicGameApp extends GameApplication {
         /** Tracks Score*/
         getGameScene().addUINode(textScore);
         textScore.textProperty().bind(getGameState().intProperty("score").asString());
-        addText("Score:", 10, 25 ).setFill(Color.GOLD);
+        addText("Score:", 10, 25).setFill(Color.GOLD);
 
 
         /** Player lives positioning in UI*/
@@ -360,8 +368,8 @@ public class BasicGameApp extends GameApplication {
      */
     public void onPlayerDeath() {
 
-            getGameState().increment("lives", -1);
-            playerLives--;
+        getGameState().increment("lives", -1);
+        playerLives--;
 
     }
 
@@ -390,6 +398,7 @@ public class BasicGameApp extends GameApplication {
     private void respawn() {
         player = spawn("Player", 300, 300);
     }
+
     public static void main(String[] args) {
         launch(args);
     }

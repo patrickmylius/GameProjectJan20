@@ -6,9 +6,13 @@ import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
 import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
+import com.almasb.fxgl.entity.components.IrremovableComponent;
+import com.almasb.fxgl.physics.BoundingShape;
+import com.almasb.fxgl.physics.HitBox;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -56,6 +60,16 @@ public class BasicGameFactory implements EntityFactory {
                 .with(new CollidableComponent(true))
                 .build();
     }
+
+   /** @Spawns("BackGroundImage")
+    public Entity BackGroundImage(SpawnData data){
+        return entityBuilder()
+                .type(EntityType.BACKGROUND)
+                .from(data)
+                .view(texture("BackgroundImageSprite.png").toAnimatedTexture(2, Duration.seconds(0.8)).loop())
+                .with(new IrremovableComponent())
+                .build();
+    } */
 
 
 }
