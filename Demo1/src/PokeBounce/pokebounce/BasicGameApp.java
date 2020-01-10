@@ -4,19 +4,15 @@ import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.audio.Sound;
-import com.almasb.fxgl.core.math.FXGLMath;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
-import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.entity.components.CollidableComponent;
-import com.almasb.fxgl.gameplay.GameState;
 import com.almasb.fxgl.input.Input;
 import com.almasb.fxgl.input.UserAction;
 import com.almasb.fxgl.physics.BoundingShape;
 import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
-import com.almasb.fxgl.physics.box2d.collision.Collision;
 import com.almasb.fxgl.time.TimerAction;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
@@ -25,21 +21,18 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-import java.lang.reflect.Type;
 import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
-
-//TODO - Background image
 //TODO - Implement Killer puff Powerup
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAME RESET METHOD
 //TODO - IMPLEMENT GAMEOVER METHOD
-//TODO - COIN SPAWN SOUND
 //TODO - COIN DESIGN, implemented
 //TODO - Player dead sound
 //TODO - Player dead DESIGN
+//TODO - Change Window name and Icon
 
 public class BasicGameApp extends GameApplication {
 
