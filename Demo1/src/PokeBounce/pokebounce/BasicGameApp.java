@@ -349,10 +349,8 @@ public class BasicGameApp extends GameApplication {
      */
     public void onCoinPickup() {
 
-        if (player.isColliding(coin)) {
-
             getGameState().increment("score", +250);
-        }
+
 
     }
 
