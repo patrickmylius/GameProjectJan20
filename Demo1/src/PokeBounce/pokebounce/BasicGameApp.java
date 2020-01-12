@@ -27,12 +27,14 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 //TODO - Implement Killer puff Powerup
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
-//TODO - IMPLEMENT GAME RESET METHOD
 //TODO - IMPLEMENT GAMEOVER METHOD
+//TODO - COIN Pickup sound
 //TODO - COIN DESIGN, implemented
 //TODO - Player dead sound
 //TODO - Player dead DESIGN
 //TODO - Change Window name and Icon
+//TODO - Change player and enemy avatar
+
 
 public class BasicGameApp extends GameApplication {
 
