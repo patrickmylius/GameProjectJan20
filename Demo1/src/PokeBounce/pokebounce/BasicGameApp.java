@@ -99,14 +99,6 @@ public class BasicGameApp extends GameApplication {
 
 
 
-
-        /* EventBus bus = getEventBus();
-
-         EventHandler<PickUpEvent> handler = event -> {
-         if (player.isColliding(coin))
-         };
-
-         getEventBus().addEventHandler(PickUpEvent.ANY, handler); */
         /** Create new Entity (Player) */
 
         player = FXGL.spawn("Player", new Point2D(300, 300));
