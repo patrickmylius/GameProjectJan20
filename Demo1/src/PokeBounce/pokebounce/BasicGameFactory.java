@@ -57,7 +57,24 @@ public class BasicGameFactory implements EntityFactory {
                 .build();
     }
 
-   /** @Spawns("BackGroundImage")
+    /**
+    Building power up
+   @Spawns("PowerUp")
+    public Entity newPowerUp(SpawnData data) {
+
+        return entityBuilder()
+
+                .from(data)
+                .type(EntityType.POWERUP)
+                .at(getAppHeight() / (Math.random() * 10) + (1),
+                        getAppWidth() / (Math.random() * 10 ) + (1))
+                .viewWithBBox("PowerUp.png")
+                .with(new CollidableComponent(true))
+                .build();
+
+    }
+
+    @Spawns("BackGroundImage")
     public Entity BackGroundImage(SpawnData data){
         return entityBuilder()
                 .type(EntityType.BACKGROUND)
@@ -65,7 +82,6 @@ public class BasicGameFactory implements EntityFactory {
                 .view(texture("BackgroundImageSprite.png").toAnimatedTexture(2, Duration.seconds(0.8)).loop())
                 .with(new IrremovableComponent())
                 .build();
-    } */
-
-
+    }
+*/
 }
