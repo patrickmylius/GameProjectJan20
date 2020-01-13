@@ -27,12 +27,12 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAMEOVER METHOD
+//TODO - IMPLEMENT HIGH SCORE LOGS.
 //TODO - COIN Pickup sound
 //TODO - PowerUp spawn sound
 //TODO - PowerOn Sound.
-//TODO - COIN DESIGN, implemented
 //TODO - Player dead sound
-//TODO - Player dead DESIGN
+//TODO - Player respawn sound
 //TODO - Change Window name and Icon
 //TODO - Change player and enemy avatar
 
