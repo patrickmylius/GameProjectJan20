@@ -35,7 +35,6 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - Player respawn sound, change to other.
 //TODO - PoweredUp Music, change to other mby.
 
-//TODO - Change Window name and Icon
 //TODO - Change player and enemy avatar
 
 
@@ -49,7 +48,7 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setWidth(600);
         gameSettings.setHeight(600);
         gameSettings.setTitle("PokeBounce - Zealand");
-        //gameSettings.setAppIcon("");
+        gameSettings.setAppIcon("PokePlayerUnit1.png");
         gameSettings.setVersion("0.1");
 
     }
