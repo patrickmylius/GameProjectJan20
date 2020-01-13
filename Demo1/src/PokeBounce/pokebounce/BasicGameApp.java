@@ -29,6 +29,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - IMPLEMENT HIGH SCORE LOGS.
+//TODO - While PowerUp = true, change ALL evilPuffs view.
 
 //TODO - Player GAME over sound
 
@@ -48,7 +49,7 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setWidth(600);
         gameSettings.setHeight(600);
         gameSettings.setTitle("PokeBounce - Zealand");
-        gameSettings.setAppIcon("PokePlayerUnit1.png");
+        gameSettings.setAppIcon("EvilPuffIcon.png");
         gameSettings.setVersion("0.1");
 
     }
@@ -93,7 +94,7 @@ public class BasicGameApp extends GameApplication {
         }, Duration.seconds(6));
         timerAction.resume();
 
-        /** Spawns new coin every 5 second*/
+        /** Spawns new coin every 8 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
                 getAppWidth() / -(Math.random() * 600) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
@@ -101,16 +102,16 @@ public class BasicGameApp extends GameApplication {
             coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
                     getAppWidth() / -(Math.random() * 600) + (1));
             FXGL.getAudioPlayer().playSound(coinEntrySound);
-        }, Duration.seconds(5));
+        }, Duration.seconds(8));
         timerAction1.resume();
 
-        /** Spawns powerup every 30 second */
+        /** Spawns powerup every 45 second */
         TimerAction timerAction2 = getGameTimer().runAtInterval(() -> {
 
             powerUp = getGameWorld().spawn("PowerUp", getAppHeight() / (Math.random() * 300) + (1),
-                    getAppWidth() / -(Math.random() * 300) + (1));
+                    getAppWidth() / -(Math.random() * 600) + (1));
             FXGL.getAudioPlayer().playSound(powerUpEntrySound);
-        }, Duration.seconds(30));
+        }, Duration.seconds(45));
         timerAction2.resume();
 
 
@@ -118,7 +119,7 @@ public class BasicGameApp extends GameApplication {
 
         player = FXGL.spawn("Player", new Point2D(300, 300));
 
-        //backGroundImg = FXGL.spawn("BackGroundImage", new Point2D(0, 0));
+        /** Creates frame repeating 1-3 on background and creates view*/
         getGameScene().setBackgroundRepeat("backGroundGif.gif");
 
 
@@ -191,7 +192,7 @@ public class BasicGameApp extends GameApplication {
                     if (playerLives > 0) {
                         runOnce(() -> {
                             respawn();
-                        }, Duration.seconds(1));
+                        }, Duration.seconds(2.5));
 
                     }
                 }
@@ -442,13 +443,21 @@ public class BasicGameApp extends GameApplication {
 
     private void respawn() {
         safeRespawn = true;
+
         player = spawn("Player", 300, 300);
+
+
+
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("repspawnPlayer.gif"));
 
         Sound respawn = getAssetLoader().loadSound("Respawn.wav");
         getAudioPlayer().playSound(respawn);
 
         FXGL.runOnce(() -> {
             safeRespawn = false;
+            player.getViewComponent().clearChildren();
+            player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
         }, Duration.seconds(3));
     }
 
