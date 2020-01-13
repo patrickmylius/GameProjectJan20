@@ -66,6 +66,7 @@ public class BasicGameApp extends GameApplication {
     private int playerLives = 3;
     private Entity powerUp;
     private boolean hasPowerUp;
+    private boolean safeRespawn;
 
 
     /**
@@ -178,7 +179,7 @@ public class BasicGameApp extends GameApplication {
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
             @Override
             protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
-                if (!hasPowerUp) {
+                if (!hasPowerUp && !safeRespawn) {
                     player.removeFromWorld();
                     onPlayerDeath();
                     if (playerLives > 0) {
@@ -194,6 +195,7 @@ public class BasicGameApp extends GameApplication {
                 }
                 //getDisplay().showBox("Game over", getGameController();
             }
+
 
 
         });
@@ -383,6 +385,10 @@ public class BasicGameApp extends GameApplication {
         player.getViewComponent().clearChildren();
         player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
 
+        evilPuff.getViewComponent().clearChildren();
+        evilPuff.getViewComponent().addChild(FXGL.texture("scaredEvilPuff.png"));
+
+
     }
 
     public void playerPowerOff() {
@@ -390,6 +396,9 @@ public class BasicGameApp extends GameApplication {
         hasPowerUp = false;
         player.getViewComponent().clearChildren();
         player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
+
+        evilPuff.getViewComponent().clearChildren();
+        evilPuff.getViewComponent().addChild(FXGL.texture("EvilPuff1.png"));
     }
 
 
@@ -415,7 +424,12 @@ public class BasicGameApp extends GameApplication {
 
 
     private void respawn() {
+        safeRespawn = true;
         player = spawn("Player", 300, 300);
+
+        FXGL.runOnce(() -> {
+            safeRespawn = false;
+        }, Duration.seconds(3));
     }
 
     public static void main(String[] args) {

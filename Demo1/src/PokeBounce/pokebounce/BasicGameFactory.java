@@ -52,7 +52,7 @@ public class BasicGameFactory implements EntityFactory {
                 .type(EntityType.COIN)
                 .at(getAppHeight() / (Math.random() * 10) + (1),
                         getAppWidth() / (Math.random() * 10) + (1))
-                .viewWithBBox(new Circle(15, Color.GOLD))
+                .viewWithBBox("Coin.png")
                 .with(new CollidableComponent(true))
                 .build();
     }
@@ -65,8 +65,8 @@ public class BasicGameFactory implements EntityFactory {
 
                 .from(data)
                 .type(EntityType.POWERUP)
-                .at(getAppHeight() / (Math.random() * 10) + (1),
-                        getAppWidth() / (Math.random() * 10 ) + (1))
+                .at(getAppHeight() / (Math.random() * 30) + (1),
+                        getAppWidth() / (Math.random() * 30 ) + (1))
                 .viewWithBBox("PowerUp.png")
                 .with(new CollidableComponent(true))
                 .build();
