@@ -57,8 +57,7 @@ public class BasicGameFactory implements EntityFactory {
                 .build();
     }
 
-    /**
-    Building power up
+    //Building power up
    @Spawns("PowerUp")
     public Entity newPowerUp(SpawnData data) {
 
@@ -73,7 +72,7 @@ public class BasicGameFactory implements EntityFactory {
                 .build();
 
     }
-
+/**
     @Spawns("BackGroundImage")
     public Entity BackGroundImage(SpawnData data){
         return entityBuilder()

@@ -26,8 +26,8 @@ import java.util.Map;
 import static com.almasb.fxgl.dsl.FXGL.*;
 
 import com.almasb.fxgl.physics.CollisionHandler;
-/** Building power up
-public class PowerUpHandler extends BasicGameApp {
+
+public class PowerUpHandler extends CollisionHandler {
 
     public PowerUpHandler() {
         super(EntityType.POWERUP, EntityType.ENEMY);
@@ -39,4 +39,3 @@ public class PowerUpHandler extends BasicGameApp {
         evilPuff.removeFromWorld();
     }
 }
-*/
