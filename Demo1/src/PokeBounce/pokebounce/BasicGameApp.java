@@ -183,7 +183,7 @@ public class BasicGameApp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
                 if (!hasPowerUp && !safeRespawn) {
-                    Sound playerSwallowed = getAssetLoader().loadSound("Eaten.wav");
+                    Sound playerSwallowed = getAssetLoader().loadSound("playerEaten.wav");
                     getAudioPlayer().playSound(playerSwallowed);
 
                     player.removeFromWorld();
@@ -197,7 +197,7 @@ public class BasicGameApp extends GameApplication {
                     }
                 }
                 if (hasPowerUp) {
-                    Sound evilPuffEaten = getAssetLoader().loadSound("Eaten.wav");
+                    Sound evilPuffEaten = getAssetLoader().loadSound("evilPuffEaten.wav");
                     getAudioPlayer().playSound(evilPuffEaten);
 
                     evilPuff.removeFromWorld();
