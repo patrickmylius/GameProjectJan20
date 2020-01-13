@@ -1,5 +1,4 @@
 package PokeBounce.pokebounce;
-
 import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
@@ -22,6 +21,7 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.util.Map;
+import java.util.TimerTask;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -30,12 +30,17 @@ import com.almasb.fxgl.physics.CollisionHandler;
 public class PowerUpHandler extends CollisionHandler {
 
     public PowerUpHandler() {
-        super(EntityType.POWERUP, EntityType.ENEMY);
+        super(EntityType.POWERUP, EntityType.PLAYER);
 
     }
 
     @Override
-    protected void onCollisionBegin(Entity powerUp, Entity evilPuff) {
-        evilPuff.removeFromWorld();
+    protected void onCollisionBegin(Entity powerUp, Entity player) {
+    powerUp.removeFromWorld();
+    FXGL.<BasicGameApp>getAppCast().playerPowerUp();
+    FXGL.runOnce(() -> {
+        FXGL.<BasicGameApp>getAppCast().playerPowerOff();
+    }, Duration.seconds(10));
     }
+
 }

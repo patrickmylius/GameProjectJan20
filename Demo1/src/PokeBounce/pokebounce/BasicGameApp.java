@@ -25,10 +25,11 @@ import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
-//TODO - Implement Killer puff Powerup
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - COIN Pickup sound
+//TODO - PowerUp spawn sound
+//TODO - PowerOn Sound.
 //TODO - COIN DESIGN, implemented
 //TODO - Player dead sound
 //TODO - Player dead DESIGN
@@ -63,6 +64,8 @@ public class BasicGameApp extends GameApplication {
     private Entity rightWall;
     private Entity coin;
     private int playerLives = 3;
+    private Entity powerUp;
+    private boolean hasPowerUp;
 
 
     /**
@@ -74,7 +77,7 @@ public class BasicGameApp extends GameApplication {
         Sound evilPuffEntrySound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
         Sound coinEntrySound = getAssetLoader().loadSound("NewCoinEntry.wav");
 
-        /** Spawns new EvilPuff every 20 seconds */
+        /** Spawns new EvilPuff every 6 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
                 getAppWidth() / -(Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
@@ -85,7 +88,7 @@ public class BasicGameApp extends GameApplication {
         }, Duration.seconds(6));
         timerAction.resume();
 
-        /** Spawns new coin every 15 second*/
+        /** Spawns new coin every 5 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
                 getAppWidth() / -(Math.random() * 600) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
@@ -95,6 +98,15 @@ public class BasicGameApp extends GameApplication {
             FXGL.getAudioPlayer().playSound(coinEntrySound);
         }, Duration.seconds(5));
         timerAction1.resume();
+
+        /** Spawns powerup every 30 second */
+        TimerAction timerAction2 = getGameTimer().runAtInterval(() -> {
+
+            powerUp = getGameWorld().spawn("PowerUp", getAppHeight() /  (Math.random() * 300) + (1),
+            getAppWidth() / -(Math.random() * 300) + (1));
+            //FXGL.getAudioPlayer().playSound(powerUpEntrySound);
+                }, Duration.seconds(30));
+        timerAction2.resume();
 
 
 
@@ -151,6 +163,7 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void initPhysics() {
+        getPhysicsWorld().addCollisionHandler(new PowerUpHandler());
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.COIN) {
 
             @Override
@@ -165,13 +178,19 @@ public class BasicGameApp extends GameApplication {
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
             @Override
             protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
-                player.removeFromWorld();
-                onPlayerDeath();
-                if (playerLives > 0) {
-                    runOnce(() -> {
-                        respawn();
-                    }, Duration.seconds(1));
+                if (!hasPowerUp) {
+                    player.removeFromWorld();
+                    onPlayerDeath();
+                    if (playerLives > 0) {
+                        runOnce(() -> {
+                            respawn();
+                        }, Duration.seconds(1));
 
+                    }
+                }
+                if (hasPowerUp) {
+                    evilPuff.removeFromWorld();
+                    getGameState().increment("score", +500);
                 }
                 //getDisplay().showBox("Game over", getGameController();
             }
@@ -356,6 +375,21 @@ public class BasicGameApp extends GameApplication {
         getGameState().increment("lives", -1);
         playerLives--;
 
+    }
+
+    public void playerPowerUp() {
+
+        hasPowerUp = true;
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
+
+    }
+
+    public void playerPowerOff() {
+
+        hasPowerUp = false;
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
     }
 
 
