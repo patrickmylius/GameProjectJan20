@@ -175,7 +175,7 @@ public class BasicGameApp extends GameApplication {
             }
 
         });
-
+/** Handles Collisions with Player and Evil puff and if player is powered up, including saveRespawn*/
         getPhysicsWorld().addCollisionHandler(new CollisionHandler(EntityType.PLAYER, EntityType.ENEMY) {
             @Override
             protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
