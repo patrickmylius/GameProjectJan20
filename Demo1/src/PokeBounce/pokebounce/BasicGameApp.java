@@ -48,8 +48,10 @@ public class BasicGameApp extends GameApplication {
     protected void initSettings(GameSettings gameSettings) {
         gameSettings.setWidth(600);
         gameSettings.setHeight(600);
-        gameSettings.setTitle("Basic Game app");
+        gameSettings.setTitle("PokeBounce - Zealand");
+        //gameSettings.setAppIcon("");
         gameSettings.setVersion("0.1");
+
     }
 
     /**
@@ -106,13 +108,11 @@ public class BasicGameApp extends GameApplication {
         /** Spawns powerup every 30 second */
         TimerAction timerAction2 = getGameTimer().runAtInterval(() -> {
 
-            powerUp = getGameWorld().spawn("PowerUp", getAppHeight() /  (Math.random() * 300) + (1),
-            getAppWidth() / -(Math.random() * 300) + (1));
+            powerUp = getGameWorld().spawn("PowerUp", getAppHeight() / (Math.random() * 300) + (1),
+                    getAppWidth() / -(Math.random() * 300) + (1));
             FXGL.getAudioPlayer().playSound(powerUpEntrySound);
-                }, Duration.seconds(30));
+        }, Duration.seconds(30));
         timerAction2.resume();
-
-
 
 
         /** Create new Entity (Player) */
@@ -205,7 +205,6 @@ public class BasicGameApp extends GameApplication {
                 }
                 //getDisplay().showBox("Game over", getGameController();
             }
-
 
 
         });
@@ -375,8 +374,7 @@ public class BasicGameApp extends GameApplication {
     public void onCoinPickup() {
         Sound coinPickedUp = getAssetLoader().loadSound("CoinPickedUp.wav");
         getAudioPlayer().playSound(coinPickedUp);
-            getGameState().increment("score", +250);
-
+        getGameState().increment("score", +250);
 
 
     }
@@ -403,7 +401,6 @@ public class BasicGameApp extends GameApplication {
 
         evilPuff.getViewComponent().clearChildren();
         evilPuff.getViewComponent().addChild(FXGL.texture("scaredEvilPuff.png"));
-
 
 
     }
