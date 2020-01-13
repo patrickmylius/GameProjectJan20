@@ -30,8 +30,10 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - IMPLEMENT HIGH SCORE LOGS.
 
-//TODO - Player dead sound
-//TODO - Player respawn sound
+//TODO - Player GAME over sound
+
+//TODO - Player respawn sound, change to other.
+//TODO - PoweredUp Music, change to other mby.
 
 //TODO - Change Window name and Icon
 //TODO - Change player and enemy avatar
@@ -445,6 +447,9 @@ public class BasicGameApp extends GameApplication {
     private void respawn() {
         safeRespawn = true;
         player = spawn("Player", 300, 300);
+
+        Sound respawn = getAssetLoader().loadSound("Respawn.wav");
+        getAudioPlayer().playSound(respawn);
 
         FXGL.runOnce(() -> {
             safeRespawn = false;
