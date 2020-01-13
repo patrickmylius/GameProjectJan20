@@ -1,4 +1,5 @@
 package PokeBounce.pokebounce;
+
 import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
@@ -36,11 +37,11 @@ public class PowerUpHandler extends CollisionHandler {
 
     @Override
     protected void onCollisionBegin(Entity powerUp, Entity player) {
-    powerUp.removeFromWorld();
-    FXGL.<BasicGameApp>getAppCast().playerPowerUp();
-    FXGL.runOnce(() -> {
-        FXGL.<BasicGameApp>getAppCast().playerPowerOff();
-    }, Duration.seconds(10));
+        powerUp.removeFromWorld();
+        FXGL.<BasicGameApp>getAppCast().playerPowerUp();
+        FXGL.runOnce(() -> {
+            FXGL.<BasicGameApp>getAppCast().playerPowerOff();
+        }, Duration.seconds(10));
     }
 
 }

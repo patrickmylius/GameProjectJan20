@@ -3,6 +3,7 @@ package PokeBounce.pokebounce;
 import PokeBounce.EntityType;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
+import com.almasb.fxgl.audio.Audio;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -28,11 +29,10 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - IMPLEMENT HIGH SCORE LOGS.
-//TODO - COIN Pickup sound
-//TODO - PowerUp spawn sound
-//TODO - PowerOn Sound.
+
 //TODO - Player dead sound
 //TODO - Player respawn sound
+
 //TODO - Change Window name and Icon
 //TODO - Change player and enemy avatar
 
@@ -77,6 +77,7 @@ public class BasicGameApp extends GameApplication {
         getGameWorld().addEntityFactory(new BasicGameFactory());
         Sound evilPuffEntrySound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
         Sound coinEntrySound = getAssetLoader().loadSound("NewCoinEntry.wav");
+        Sound powerUpEntrySound = getAssetLoader().loadSound("PowerUpSpawn.wav");
 
         /** Spawns new EvilPuff every 6 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
@@ -105,7 +106,7 @@ public class BasicGameApp extends GameApplication {
 
             powerUp = getGameWorld().spawn("PowerUp", getAppHeight() /  (Math.random() * 300) + (1),
             getAppWidth() / -(Math.random() * 300) + (1));
-            //FXGL.getAudioPlayer().playSound(powerUpEntrySound);
+            FXGL.getAudioPlayer().playSound(powerUpEntrySound);
                 }, Duration.seconds(30));
         timerAction2.resume();
 
@@ -180,8 +181,12 @@ public class BasicGameApp extends GameApplication {
             @Override
             protected void onCollisionBegin(Entity playerEaten, Entity evilPuff) {
                 if (!hasPowerUp && !safeRespawn) {
+                    Sound playerSwallowed = getAssetLoader().loadSound("Eaten.wav");
+                    getAudioPlayer().playSound(playerSwallowed);
+
                     player.removeFromWorld();
                     onPlayerDeath();
+
                     if (playerLives > 0) {
                         runOnce(() -> {
                             respawn();
@@ -190,6 +195,9 @@ public class BasicGameApp extends GameApplication {
                     }
                 }
                 if (hasPowerUp) {
+                    Sound evilPuffEaten = getAssetLoader().loadSound("Eaten.wav");
+                    getAudioPlayer().playSound(evilPuffEaten);
+
                     evilPuff.removeFromWorld();
                     getGameState().increment("score", +500);
                 }
@@ -363,8 +371,10 @@ public class BasicGameApp extends GameApplication {
      * Coin point method, increases score by 250 points.
      */
     public void onCoinPickup() {
-
+        Sound coinPickedUp = getAssetLoader().loadSound("CoinPickedUp.wav");
+        getAudioPlayer().playSound(coinPickedUp);
             getGameState().increment("score", +250);
+
 
 
     }
@@ -382,6 +392,10 @@ public class BasicGameApp extends GameApplication {
     public void playerPowerUp() {
 
         hasPowerUp = true;
+
+        Sound juicedUp = getAssetLoader().loadSound("JuicedUp.wav");
+        getAudioPlayer().playSound(juicedUp);
+
         player.getViewComponent().clearChildren();
         player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
 
@@ -389,11 +403,16 @@ public class BasicGameApp extends GameApplication {
         evilPuff.getViewComponent().addChild(FXGL.texture("scaredEvilPuff.png"));
 
 
+
     }
 
     public void playerPowerOff() {
 
         hasPowerUp = false;
+
+        Sound juicedUp = getAssetLoader().loadSound("JuicedUp.wav");
+        getAudioPlayer().stopSound(juicedUp);
+
         player.getViewComponent().clearChildren();
         player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
 
