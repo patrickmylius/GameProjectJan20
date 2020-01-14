@@ -16,6 +16,7 @@ import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
 import com.almasb.fxgl.time.TimerAction;
+import com.almasb.fxgl.ui.FXGLButton;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -55,6 +56,8 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setAppIcon("EvilPuffIcon.png");
         gameSettings.setVersion("0.1");
         gameSettings.setMenuEnabled(true);
+
+
 
         gameSettings.setSceneFactory(new SceneFactory() {
             @Override
@@ -342,8 +345,19 @@ public class BasicGameApp extends GameApplication {
             getAudioPlayer().playSound(gameOver);
 
 
-            getDisplay().showMessageBox("Game over");
 
+
+
+
+
+
+        }
+        /** if player is Game Over, resets playerLives, and takes him to main menu */
+        if (playerLives == 0) {
+            getGameController().gotoMainMenu();
+            playerLives++;
+            playerLives++;
+            playerLives++;
         }
         if (hasPowerUp) {
             player.getViewComponent().clearChildren();
