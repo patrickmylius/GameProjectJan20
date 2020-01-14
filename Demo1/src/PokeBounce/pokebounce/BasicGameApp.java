@@ -2,9 +2,9 @@ package PokeBounce.pokebounce;
 
 import PokeBounce.EntityType;
 // import PokeBounce.control.MyMenu;
+import PokeBounce.control.PokeBounceGameMenu;
 import PokeBounce.control.PokeBounceMainMenu;
 import com.almasb.fxgl.app.*;
-import com.almasb.fxgl.audio.Audio;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -28,7 +28,7 @@ import java.util.Map;
 import static com.almasb.fxgl.dsl.FXGL.*;
 
 /**
- * MAJOR TODOS ssas
+ * MAJOR TODOS
  */
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT HIGH SCORE LOGS.
@@ -61,8 +61,12 @@ public class BasicGameApp extends GameApplication {
             public FXGLMenu newMainMenu() {
                 return new PokeBounceMainMenu(MenuType.MAIN_MENU);
             }
-        });
+            public FXGLMenu newGameMenu(){
+                return new PokeBounceGameMenu(MenuType.GAME_MENU);
+            }
 
+
+        });
     }
 
     /**
@@ -337,7 +341,9 @@ public class BasicGameApp extends GameApplication {
             Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
             getAudioPlayer().playSound(gameOver);
 
+
             getDisplay().showMessageBox("Game over");
+
         }
         if (hasPowerUp) {
             player.getViewComponent().clearChildren();
@@ -446,7 +452,7 @@ public class BasicGameApp extends GameApplication {
         Sound juicedUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().stopSound(juicedUp);
 
-       // player.getViewComponent().clearChildren();
+        // player.getViewComponent().clearChildren();
         //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
 
         FXGL.set("poweredUp", false);
@@ -498,7 +504,7 @@ public class BasicGameApp extends GameApplication {
 
         FXGL.runOnce(() -> {
             safeRespawn = false;
-           // player.getViewComponent().clearChildren();
+            // player.getViewComponent().clearChildren();
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
         }, Duration.seconds(4));
     }
