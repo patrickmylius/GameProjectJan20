@@ -1,8 +1,9 @@
 package PokeBounce.pokebounce;
 
 import PokeBounce.EntityType;
-import com.almasb.fxgl.app.GameApplication;
-import com.almasb.fxgl.app.GameSettings;
+// import PokeBounce.control.MyMenu;
+import PokeBounce.control.PokeBounceMainMenu;
+import com.almasb.fxgl.app.*;
 import com.almasb.fxgl.audio.Audio;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.dsl.FXGL;
@@ -26,13 +27,15 @@ import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
+/**
+ * MAJOR TODOS ssas
+ */
 //TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
-//TODO - IMPLEMENT GAMEOVER METHOD
 //TODO - IMPLEMENT HIGH SCORE LOGS.
-//TODO - While PowerUp = true, change ALL evilPuffs view.
 
-//TODO - Player GAME over sound
-
+/**
+ * MINOR TODOES
+ */
 //TODO - Player respawn sound, change to other.
 //TODO - PoweredUp Music, change to other mby.
 
@@ -51,6 +54,14 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setTitle("PokeBounce - Zealand");
         gameSettings.setAppIcon("EvilPuffIcon.png");
         gameSettings.setVersion("0.1");
+        gameSettings.setMenuEnabled(true);
+
+        gameSettings.setSceneFactory(new SceneFactory() {
+            @Override
+            public FXGLMenu newMainMenu() {
+                return new PokeBounceMainMenu(MenuType.MAIN_MENU);
+            }
+        });
 
     }
 
@@ -321,8 +332,27 @@ public class BasicGameApp extends GameApplication {
 
     @Override
     protected void onUpdate(double trf) {
-        if (playerLives == 0)
+        if (playerLives == 0) {
+
+            Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
+            getAudioPlayer().playSound(gameOver);
+
             getDisplay().showMessageBox("Game over");
+        }
+        if (hasPowerUp) {
+            player.getViewComponent().clearChildren();
+            player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
+        }
+        if (safeRespawn && !hasPowerUp) {
+            player.getViewComponent().clearChildren();
+            player.getViewComponent().addChild(FXGL.texture("respawnPlayer.gif"));
+        }
+        if (!safeRespawn && !hasPowerUp) {
+            player.getViewComponent().clearChildren();
+            player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
+
+        }
+
 
     }
 
@@ -393,14 +423,18 @@ public class BasicGameApp extends GameApplication {
 
         hasPowerUp = true;
 
-        Sound juicedUp = getAssetLoader().loadSound("JuicedUp.wav");
+        Sound juicedUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().playSound(juicedUp);
 
-        player.getViewComponent().clearChildren();
-        player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
+        //player.getViewComponent().clearChildren();
+        //player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
 
-        evilPuff.getViewComponent().clearChildren();
-        evilPuff.getViewComponent().addChild(FXGL.texture("scaredEvilPuff.png"));
+        FXGL.set("poweredUp", true);
+
+        //for (int i = 0; i < FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).size(); i++) {
+        //FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).get(i).getComponent
+        //(EvilPuffComponent.class).setPoweredUp(true);
+        // }
 
 
     }
@@ -409,14 +443,20 @@ public class BasicGameApp extends GameApplication {
 
         hasPowerUp = false;
 
-        Sound juicedUp = getAssetLoader().loadSound("JuicedUp.wav");
+        Sound juicedUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().stopSound(juicedUp);
 
-        player.getViewComponent().clearChildren();
-        player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
+       // player.getViewComponent().clearChildren();
+        //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
 
-        evilPuff.getViewComponent().clearChildren();
-        evilPuff.getViewComponent().addChild(FXGL.texture("EvilPuff1.png"));
+        FXGL.set("poweredUp", false);
+
+        //for (int i = 0; i < FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).size(); i++) {
+        //FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).get(i).getComponent
+        // (EvilPuffComponent.class).setPoweredUp(false);
+        //}
+
+
     }
 
 
@@ -427,6 +467,9 @@ public class BasicGameApp extends GameApplication {
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("score", 0);
         vars.put("lives", 3);
+
+        vars.put("poweredUp", false);
+        vars.put("safeRespawn", false);
 
     }
 
@@ -447,19 +490,19 @@ public class BasicGameApp extends GameApplication {
         player = spawn("Player", 300, 300);
 
 
-
-        player.getViewComponent().clearChildren();
-        player.getViewComponent().addChild(FXGL.texture("repspawnPlayer.gif"));
+        //player.getViewComponent().clearChildren();
+        //player.getViewComponent().addChild(FXGL.texture("respawnPlayer.gif"));
 
         Sound respawn = getAssetLoader().loadSound("Respawn.wav");
         getAudioPlayer().playSound(respawn);
 
         FXGL.runOnce(() -> {
             safeRespawn = false;
-            player.getViewComponent().clearChildren();
-            player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
-        }, Duration.seconds(3));
+           // player.getViewComponent().clearChildren();
+            //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
+        }, Duration.seconds(4));
     }
+
 
     public static void main(String[] args) {
         launch(args);
