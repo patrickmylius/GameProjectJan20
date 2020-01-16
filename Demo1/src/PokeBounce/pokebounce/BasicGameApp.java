@@ -349,7 +349,7 @@ public class BasicGameApp extends GameApplication {
 
             Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
             getAudioPlayer().playSound(gameOver);
-            saveToFile(totalScore);
+           /** saveToFile(totalScore); */
 
 
 
@@ -532,19 +532,19 @@ public class BasicGameApp extends GameApplication {
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
         }, Duration.seconds(4));
     }
-
+/**
     public void saveToFile(int totalScore) {
         try {
             File file = new File("src/assets/TotalScore.txt");
             PrintWriter output = new PrintWriter(file);
-            output.print(totalScore);
+            output.print(String.valueOf(totalScore));
             output.close();
         } catch (FileNotFoundException e) {
             System.out.println("Sorry, Highscore save was failed, try again! ");
         }
     }
 
-
+*/
     public static void main(String[] args) {
         launch(args);
     }
