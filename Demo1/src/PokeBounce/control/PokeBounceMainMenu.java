@@ -50,7 +50,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
     @Override
     protected Node createBackground(double width, double height) {
-        return new ImageView(FXGL.image(""));
+        return new ImageView(FXGL.image("MainMenuGif.gif"));
     }
 
     @Override

@@ -40,7 +40,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 //TODO - Player respawn sound, change to other.
 //TODO - PoweredUp Music, change to other mby.
 
-//TODO - Change player and enemy avatar
+//TODO - Change player and enemy avatar... mby game Gif
 
 
 public class BasicGameApp extends GameApplication {
