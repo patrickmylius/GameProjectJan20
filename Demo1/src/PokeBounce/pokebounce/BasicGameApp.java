@@ -33,6 +33,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MAJOR TODOS
  */
 //TODO - IMPLEMENT HIGH SCORE LOGS.
+//TODO - REFRACTER TO NEW PROGRAM FILE
 
 /**
  * MINOR TODOES
@@ -91,6 +92,7 @@ public class BasicGameApp extends GameApplication {
     private Entity backGroundImg;
 
     private int playerLives = 3;
+    public int totalScore;
 
     private String highScoreLog = "PokeBounce High Scores \n ************";
 
@@ -224,8 +226,8 @@ public class BasicGameApp extends GameApplication {
 
                     evilPuff.removeFromWorld();
                     getGameState().increment("score", +500);
+                    totalScore = totalScore + 500;
                 }
-                //getDisplay().showBox("Game over", getGameController();
             }
 
 
@@ -347,6 +349,7 @@ public class BasicGameApp extends GameApplication {
 
             Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
             getAudioPlayer().playSound(gameOver);
+            saveToFile(totalScore);
 
 
 
@@ -429,6 +432,7 @@ public class BasicGameApp extends GameApplication {
         Sound coinPickedUp = getAssetLoader().loadSound("CoinPickedUp.wav");
         getAudioPlayer().playSound(coinPickedUp);
         getGameState().increment("score", +250);
+
 
 
     }
@@ -529,11 +533,11 @@ public class BasicGameApp extends GameApplication {
         }, Duration.seconds(4));
     }
 
-    public void saveToFile() {
+    public void saveToFile(int totalScore) {
         try {
-            File file = new File("src/assets/HighScoreLog.txt");
+            File file = new File("src/assets/TotalScore.txt");
             PrintWriter output = new PrintWriter(file);
-            output.print(highScoreLog);
+            output.print(totalScore);
             output.close();
         } catch (FileNotFoundException e) {
             System.out.println("Sorry, Highscore save was failed, try again! ");
