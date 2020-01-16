@@ -1,7 +1,6 @@
 package PokeBounce.pokebounce;
 
 import PokeBounce.EntityType;
-// import PokeBounce.control.MyMenu;
 import PokeBounce.control.PokeBounceGameMenu;
 import PokeBounce.control.PokeBounceMainMenu;
 import com.almasb.fxgl.app.*;
@@ -16,7 +15,6 @@ import com.almasb.fxgl.physics.CollisionHandler;
 import com.almasb.fxgl.physics.HitBox;
 import com.almasb.fxgl.physics.PhysicsComponent;
 import com.almasb.fxgl.time.TimerAction;
-import com.almasb.fxgl.ui.FXGLButton;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
@@ -24,6 +22,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
@@ -31,7 +32,6 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 /**
  * MAJOR TODOS
  */
-//TODO - Implement GAME OVER + RESTART GAME if player collides with Evil Puff and has no lifes left
 //TODO - IMPLEMENT HIGH SCORE LOGS.
 
 /**
@@ -75,20 +75,24 @@ public class BasicGameApp extends GameApplication {
     /**
      * Creates variables
      */
-    private Entity player;
-    private Entity backGroundImg;
     private boolean leftWallTouched;
     private boolean rightWallTouched;
     private boolean topWallTouched;
     private boolean bottomWallTouched;
+    private boolean hasPowerUp;
+    private boolean safeRespawn;
+
     private Entity evilPuff;
     private Entity leftWall;
     private Entity rightWall;
     private Entity coin;
-    private int playerLives = 3;
     private Entity powerUp;
-    private boolean hasPowerUp;
-    private boolean safeRespawn;
+    private Entity player;
+    private Entity backGroundImg;
+
+    private int playerLives = 3;
+
+    private String highScoreLog = "PokeBounce High Scores \n ************";
 
 
     /**
@@ -181,7 +185,7 @@ public class BasicGameApp extends GameApplication {
 
 
     /**
-     * initializing physics, adding collisionHandler, Player, Coin, Enemy
+     * initializing physics, adding collisionHandler, Player, Coin, Enemy, PowerUp
      */
     @Override
     protected void initPhysics() {
@@ -491,6 +495,8 @@ public class BasicGameApp extends GameApplication {
         vars.put("poweredUp", false);
         vars.put("safeRespawn", false);
 
+
+
     }
 
 
@@ -521,6 +527,17 @@ public class BasicGameApp extends GameApplication {
             // player.getViewComponent().clearChildren();
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
         }, Duration.seconds(4));
+    }
+
+    public void saveToFile() {
+        try {
+            File file = new File("src/assets/HighScoreLog.txt");
+            PrintWriter output = new PrintWriter(file);
+            output.print(highScoreLog);
+            output.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Sorry, Highscore save was failed, try again! ");
+        }
     }
 
 

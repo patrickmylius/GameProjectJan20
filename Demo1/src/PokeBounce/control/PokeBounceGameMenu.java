@@ -46,7 +46,7 @@ public class PokeBounceGameMenu extends FXGLMenu {
 
     @Override
     protected Node createBackground(double width, double height) {
-        return new ImageView(FXGL.image(""));
+        return new ImageView(FXGL.image("GameMenuEvilPuff3.png"));
     }
 
     @Override
