@@ -33,13 +33,16 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MAJOR TODOS
  */
 //TODO - IMPLEMENT HIGH SCORE LOGS.
-//TODO - REFRACTER TO NEW PROGRAM FILE
+//TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
 
 /**
  * MINOR TODOES
  */
-//TODO - Player respawn sound, change to other.
-//TODO - PoweredUp Music, change to other mby.
+//TODO - Fix Sound levels
+//TODO :: coinPickedUp.wav :: newCoinEntry.wav :: evilPuffEaten.wav :: PowerUpSpawn.wav ::
+
+//TODO - NEW MUSIC FILES REPLACES ...
+//TODO :: playerEaten.wav :: PoweredUp.wav
 
 //TODO - Change player and enemy avatar... mby game Gif
 
@@ -531,20 +534,22 @@ public class BasicGameApp extends GameApplication {
             // player.getViewComponent().clearChildren();
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
         }, Duration.seconds(4));
+
+
     }
-/**
-    public void saveToFile(int totalScore) {
+
+    public void saveToFile(long totalScore) {
         try {
-            File file = new File("src/assets/TotalScore.txt");
+            File file = new File("src/TotalScore.txt");
             PrintWriter output = new PrintWriter(file);
-            output.print(String.valueOf(totalScore));
+            output.print(totalScore);
             output.close();
         } catch (FileNotFoundException e) {
             System.out.println("Sorry, Highscore save was failed, try again! ");
         }
     }
 
-*/
+
     public static void main(String[] args) {
         launch(args);
     }
