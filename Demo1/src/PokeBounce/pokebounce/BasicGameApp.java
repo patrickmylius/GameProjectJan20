@@ -93,7 +93,7 @@ public class BasicGameApp extends GameApplication {
     private int playerLives = 3;
     public int totalScore;
 
-    private String log = "PokeBounce High Scores \n ************************************" ;
+    private String log = "PokeBounce High Scores \n************************************" ;
 
 
     /**
@@ -107,6 +107,7 @@ public class BasicGameApp extends GameApplication {
         Sound powerUpEntrySound = getAssetLoader().loadSound("PowerUpSpawn.wav");
 
         /** Spawns new EvilPuff every 6 seconds */
+        /**FOR LAPTOP 1920x1080 pixels*/
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
                 getAppWidth() / -(Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
@@ -116,6 +117,18 @@ public class BasicGameApp extends GameApplication {
             getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(6));
         timerAction.resume();
+
+        /**FOR STATION 57600x1080 pixels*/
+/**
+        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+                getAppWidth() / -(Math.random() * 200) + (0.75));
+        TimerAction timerAction = getGameTimer().runAtInterval(() ->
+        {
+            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+                    getAppWidth() / (Math.random() * 200) + (0.75));
+            getAudioPlayer().playSound(evilPuffEntrySound);
+        }, Duration.seconds(6));
+        timerAction.resume(); */
 
         /** Spawns new coin every 8 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
@@ -132,9 +145,9 @@ public class BasicGameApp extends GameApplication {
         TimerAction timerAction2 = getGameTimer().runAtInterval(() -> {
 
             powerUp = getGameWorld().spawn("PowerUp", getAppHeight() / (Math.random() * 300) + (1),
-                    getAppWidth() / -(Math.random() * 600) + (1));
+                    getAppWidth() / -(Math.random() * 300) + (1));
             FXGL.getAudioPlayer().playSound(powerUpEntrySound);
-        }, Duration.seconds(45));
+        }, Duration.seconds(40));
         timerAction2.resume();
 
 
@@ -216,7 +229,7 @@ public class BasicGameApp extends GameApplication {
                         runOnce(() -> {
                             respawn();
                             /** Sets how long player is removed from map, before respawning timer starts*/
-                        }, Duration.seconds(2));
+                        }, Duration.seconds(1.5));
 
                     }
                 }
@@ -305,7 +318,8 @@ public class BasicGameApp extends GameApplication {
                 if (rightWallTouched) //If player unit collides with right wall,"Move Right" function stops until false.
                     return;
 
-                player.translateX(5); //Move right, 5 pixels
+                //player.translateX(5); //Move right, 5 pixels, for 5760x1080
+                player.translateX(6); //Move right 6 pixels for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved right
             }
         }, KeyCode.D);
@@ -316,7 +330,8 @@ public class BasicGameApp extends GameApplication {
                 if (leftWallTouched) //If player unit collides with left wall,"Move Left" function stops until false.
                     return;
 
-                player.translateX(-5); //move left 5 pixels
+                //player.translateX(-5); //move left 5 pixels. for 5760x1080
+                player.translateX(-6); //move left 6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved left
             }
         }, KeyCode.A);
@@ -327,7 +342,8 @@ public class BasicGameApp extends GameApplication {
                 if (topWallTouched) //If player unit collides with top wall,"Move Up" function stops until false.
                     return;
 
-                player.translateY(-5); //move 5 pixels up
+                //player.translateY(-5); //move 5 pixels up, for 5760x1080
+                player.translateY(-6); //move up 6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); tracks pixels moved up
             }
         }, KeyCode.W);
@@ -338,7 +354,8 @@ public class BasicGameApp extends GameApplication {
                 if (bottomWallTouched) //If player unit collides with bottom wall,"Move Down" function stops until false.
                     return;
 
-                player.translateY(5); //move 5 pixels down
+                //player.translateY(5); //move 5 pixels down, for 5760x1080
+                player.translateY(6); //move down 6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved down
             }
         }, KeyCode.S);
@@ -354,14 +371,9 @@ public class BasicGameApp extends GameApplication {
 
 /** When player is game over, log saves score to "totalScore.txt" */
             String logmessage = "\nPlayer unknown: your score ended as: ";
-            System.out.println(logmessage);
-            log = log + logmessage + totalScore + "\n ************************************";
+            System.out.println(logmessage + totalScore);
+            log = log + logmessage + totalScore + "\n************************************";
             saveToFile(totalScore);
-
-
-
-
-
 
 
 
@@ -373,7 +385,7 @@ public class BasicGameApp extends GameApplication {
             playerLives++;
             playerLives++;
 
-            //highScoreLog = highScorelog - highScorelog;
+            //
         }
         if (hasPowerUp) {
             player.getViewComponent().clearChildren();
@@ -467,6 +479,7 @@ public class BasicGameApp extends GameApplication {
         Sound poweredUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().playSound(poweredUp);
 
+
         //player.getViewComponent().clearChildren();
         //player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
 
@@ -544,14 +557,14 @@ public class BasicGameApp extends GameApplication {
             // player.getViewComponent().clearChildren();
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
             /** Sets respawn timer, where player is not able to collide with evilPuffs for the duration*/
-        }, Duration.seconds(4.5));
+        }, Duration.seconds(2.5));
 
 
     }
 /** saves players score to file method */
     public void saveToFile(int totalScore) {
         try {
-            File file = new File("src/PokeBounce/TotalScore.txt");
+            File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
             PrintWriter output = new PrintWriter(file);
             output.print(log);
             output.close();
