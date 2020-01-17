@@ -217,7 +217,8 @@ public class BasicGameApp extends GameApplication {
                     if (playerLives > 0) {
                         runOnce(() -> {
                             respawn();
-                        }, Duration.seconds(2.5));
+                            /** Sets how long player is removed from map, before respawning timer starts*/
+                        }, Duration.seconds(2));
 
                     }
                 }
@@ -452,8 +453,8 @@ public class BasicGameApp extends GameApplication {
 
         hasPowerUp = true;
 
-        Sound juicedUp = getAssetLoader().loadSound("PoweredUp.wav");
-        getAudioPlayer().playSound(juicedUp);
+        Sound poweredUp = getAssetLoader().loadSound("PoweredUp.wav");
+        getAudioPlayer().playSound(poweredUp);
 
         //player.getViewComponent().clearChildren();
         //player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
@@ -472,8 +473,8 @@ public class BasicGameApp extends GameApplication {
 
         hasPowerUp = false;
 
-        Sound juicedUp = getAssetLoader().loadSound("PoweredUp.wav");
-        getAudioPlayer().stopSound(juicedUp);
+        Sound poweredUp = getAssetLoader().loadSound("PoweredUp.wav");
+        getAudioPlayer().stopSound(poweredUp);
 
         // player.getViewComponent().clearChildren();
         //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
@@ -531,7 +532,8 @@ public class BasicGameApp extends GameApplication {
             safeRespawn = false;
             // player.getViewComponent().clearChildren();
             //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
-        }, Duration.seconds(4));
+            /** Sets respawn timer, where player is not able to collide with evilPuffs for the duration*/
+        }, Duration.seconds(4.5));
 
 
     }
