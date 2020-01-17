@@ -29,6 +29,8 @@ import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
+//TODO ::::: REMEMBER PIXEL MOVEMENT CHANGE, WHEN SWAPPING FROM STATION TO LAPTOP.
+
 /**
  * MAJOR TODOS
  */
@@ -303,7 +305,7 @@ public class BasicGameApp extends GameApplication {
                 if (rightWallTouched) //If player unit collides with right wall,"Move Right" function stops until false.
                     return;
 
-                player.translateX(3); //Move right, 5 pixels
+                player.translateX(5); //Move right, 5 pixels
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved right
             }
         }, KeyCode.D);
@@ -314,7 +316,7 @@ public class BasicGameApp extends GameApplication {
                 if (leftWallTouched) //If player unit collides with left wall,"Move Left" function stops until false.
                     return;
 
-                player.translateX(-3); //move left 5 pixels
+                player.translateX(-5); //move left 5 pixels
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved left
             }
         }, KeyCode.A);
@@ -325,7 +327,7 @@ public class BasicGameApp extends GameApplication {
                 if (topWallTouched) //If player unit collides with top wall,"Move Up" function stops until false.
                     return;
 
-                player.translateY(-3); //move 5 pixels up
+                player.translateY(-5); //move 5 pixels up
                 //getGameState().increment("pixelsMoved", +3); tracks pixels moved up
             }
         }, KeyCode.W);
@@ -336,7 +338,7 @@ public class BasicGameApp extends GameApplication {
                 if (bottomWallTouched) //If player unit collides with bottom wall,"Move Down" function stops until false.
                     return;
 
-                player.translateY(3); //move 5 pixels down
+                player.translateY(5); //move 5 pixels down
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved down
             }
         }, KeyCode.S);
