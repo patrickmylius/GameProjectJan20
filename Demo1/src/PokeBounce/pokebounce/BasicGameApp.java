@@ -93,7 +93,7 @@ public class BasicGameApp extends GameApplication {
     private int playerLives = 3;
     public int totalScore;
 
-    private String highScoreLog = "PokeBounce High Scores \n ************";
+    private String log = "PokeBounce High Scores \n ************************************" ;
 
 
     /**
@@ -226,6 +226,7 @@ public class BasicGameApp extends GameApplication {
 
                     evilPuff.removeFromWorld();
                     getGameState().increment("score", +500);
+                    /** adds 500 points to totalScore for the log, every time player eats EvilPuff */
                     totalScore = totalScore + 500;
                 }
             }
@@ -349,7 +350,13 @@ public class BasicGameApp extends GameApplication {
 
             Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
             getAudioPlayer().playSound(gameOver);
-           /** saveToFile(totalScore); */
+
+
+/** When player is game over, log saves score to "totalScore.txt" */
+            String logmessage = "\nPlayer unknown: your score ended as: ";
+            System.out.println(logmessage);
+            log = log + logmessage + totalScore + "\n ************************************";
+            saveToFile(totalScore);
 
 
 
@@ -365,6 +372,8 @@ public class BasicGameApp extends GameApplication {
             playerLives++;
             playerLives++;
             playerLives++;
+
+            //highScoreLog = highScorelog - highScorelog;
         }
         if (hasPowerUp) {
             player.getViewComponent().clearChildren();
@@ -432,6 +441,10 @@ public class BasicGameApp extends GameApplication {
         Sound coinPickedUp = getAssetLoader().loadSound("CoinPickedUp.wav");
         getAudioPlayer().playSound(coinPickedUp);
         getGameState().increment("score", +250);
+        /** adds 250 points to totalScore for the log, every time player picks up coin */
+        totalScore = totalScore + 250;
+
+        //highScoreLog = highScoreLog - highScoreLog;
 
 
 
@@ -535,15 +548,16 @@ public class BasicGameApp extends GameApplication {
 
 
     }
-
-    public void saveToFile(long totalScore) {
+/** saves players score to file method */
+    public void saveToFile(int totalScore) {
         try {
-            File file = new File("src/TotalScore.txt");
+            File file = new File("src/PokeBounce/TotalScore.txt");
             PrintWriter output = new PrintWriter(file);
-            output.print(totalScore);
+            output.print(log);
             output.close();
         } catch (FileNotFoundException e) {
             System.out.println("Sorry, Highscore save was failed, try again! ");
+            e.printStackTrace();
         }
     }
 
