@@ -38,8 +38,6 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 /**
  * MINOR TODOES
  */
-//TODO - Fix Sound levels
-//TODO :: :: ::  :: PowerUpSpawn.wav :: Respawn.wav
 
 //TODO - NEW MUSIC FILES REPLACES ...
 //TODO :: playerEaten.wav :: PoweredUp.wav :: NewEvilPuffEntry.wav
