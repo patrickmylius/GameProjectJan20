@@ -39,10 +39,10 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MINOR TODOES
  */
 //TODO - Fix Sound levels
-//TODO :: :: newCoinEntry.wav :: evilPuffEaten.wav :: PowerUpSpawn.wav ::
+//TODO :: :: ::  :: PowerUpSpawn.wav :: Respawn.wav
 
 //TODO - NEW MUSIC FILES REPLACES ...
-//TODO :: playerEaten.wav :: PoweredUp.wav
+//TODO :: playerEaten.wav :: PoweredUp.wav :: NewEvilPuffEntry.wav
 
 //TODO - Change player and enemy avatar... mby game Gif
 
