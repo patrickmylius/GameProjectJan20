@@ -23,6 +23,7 @@ import javafx.stage.StageStyle;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
@@ -103,8 +104,24 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             position++;
             vBox.getChildren().addAll(borderPane);
-            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; " +
-                    "-fx-background-color: rgba(0,200,100, 0.25);");
+
+            //vBox.setBackground(background);
+            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0;");
+            //create a input stream
+            FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/GameMenuEvilPuff.png");
+//
+//        // create a image
+            Image img = new Image(fileInput);
+//
+//        // create a background image
+            BackgroundImage backgroundimage = new BackgroundImage(img,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT);
+            Background background = new Background(backgroundimage);
+            vBox.setBackground(background);
+                    //"-fx-background-color: rgba(0,200,100, 0.25);");
                     // SETS TEXT SIZE; style and weight and BACKGROND
         }
         Stage stage = new Stage();
@@ -114,6 +131,9 @@ public class PokeBounceMainMenu extends FXGLMenu {
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(vBox);
+
+
+
         stage.getIcons().add(new Image("assets/textures/EvilPuff1.png"));
         stage.setScene(scene);
         stage.show();
