@@ -1,19 +1,19 @@
 package PokeBounce.control;
 
+import PokeBounce.pokebounce.BasicGameApp;
 import com.almasb.fxgl.app.FXGLMenu;
 import com.almasb.fxgl.app.MenuType;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -21,6 +21,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -93,6 +94,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
         for (Map.Entry<String, Integer> entry : reverseSorted.entrySet()) {
             BorderPane borderPane = new BorderPane();
 
+
             Label label1 = new Label("  " + position + ". " + entry.getKey());
             borderPane.setLeft(label1);
 
@@ -100,7 +102,9 @@ public class PokeBounceMainMenu extends FXGLMenu {
             borderPane.setRight(label2);
 
             position++;
-            vBox.getChildren().add(borderPane);
+            vBox.getChildren().addAll(borderPane);
+            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; " +
+                    "-fx-background-color: rgba(0,100,100, 0.5)"); // SETS TEXT SIZE; style and weight and BACKGROND
         }
         Stage stage = new Stage();
         stage.setTitle("Highscores");

@@ -2,12 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2be47ce5-b85b-4446-8b42-8133f7047890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-17.03.40.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.44.01.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.44.15.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.44.26.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.44.41.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.44.54.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.46.35.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.48.24.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.48.45.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.49.02.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-18.54.20.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.43.27.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.44.17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.45.18.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-15.09.29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.06.41.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.15.29.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.34.43.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.35.09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.35.51.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-17.03.40.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-17.10.25.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +120,7 @@
       <workItem from="1579274878518" duration="2070000" />
       <workItem from="1579337381513" duration="614000" />
       <workItem from="1579415009333" duration="4883000" />
-      <workItem from="1579442924842" duration="7155000" />
+      <workItem from="1579442924842" duration="13797000" />
     </task>
     <task id="LOCAL-00001" summary="Changing sound levels">
       <created>1579248225122</created>
@@ -177,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579448257606</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="stage.initModality set to HighScores stage.">
+      <created>1579450259835</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1579450259835</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +216,8 @@
     <MESSAGE value="Implemented log on coin pickup and evilPuff eaten.&#10;&#10;When game over, log traces totalScore" />
     <MESSAGE value="Updated log to an: if (file.exists()==false)&#10;then create a new log.&#10;&#10;Otherwise, maintain same log!! HURAAAAAYYY" />
     <MESSAGE value="Updated to better functional saveToFile();&#10;&#10;Implemented HighScore Array printed on new Scene." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to better functional saveToFile();&#10;&#10;Implemented HighScore Array printed on new Scene." />
+    <MESSAGE value="stage.initModality set to HighScores stage." />
+    <option name="LAST_COMMIT_MESSAGE" value="stage.initModality set to HighScores stage." />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579245068721">
@@ -214,10 +237,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579245065368" />
-    <state x="1105" y="36" key="CommitChangelistDialog2" timestamp="1579448256681">
+    <state x="1105" y="36" key="CommitChangelistDialog2" timestamp="1579450259073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1105" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448256681" />
+    <state x="1105" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450259073" />
     <state x="591" y="193" key="FileChooserDialogImpl" timestamp="1579245035395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -227,26 +250,42 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="601" y="288" width="358" height="247" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1578317744112" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579450204940">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579457097835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579457097835" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579450204940">
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579457097835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579457097835" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579450204940">
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579457097835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579457097835" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578560604580" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579450204940">
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579457097835">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579457097835" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579456891173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579456891173" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1579456891173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579456891173" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1579456891173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579456891173" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1579456891173">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579456891173" />
     <state x="311" y="0" key="SettingsEditor" timestamp="1579245038390">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -269,10 +308,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579447428597" />
-    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1579417905596">
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1579452013497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579417905596" />
+    <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579452013497" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1578313908361" />
   </component>
 </project>
