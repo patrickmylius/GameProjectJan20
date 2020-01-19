@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2be47ce5-b85b-4446-8b42-8133f7047890" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-15.09.29.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.06.41.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-16.15.29.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-17.03.40.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.30.29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.32.29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.32.57.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceGameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceGameMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.43.27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-19-jan.-2020-08.44.17.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/BasicGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/BasicGameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/EvilPuffComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/EvilPuffComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +105,7 @@
       <workItem from="1579274878518" duration="2070000" />
       <workItem from="1579337381513" duration="614000" />
       <workItem from="1579415009333" duration="4883000" />
-      <workItem from="1579442924842" duration="5077000" />
+      <workItem from="1579442924842" duration="7155000" />
     </task>
     <task id="LOCAL-00001" summary="Changing sound levels">
       <created>1579248225122</created>
@@ -176,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579419642379</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated to better functional saveToFile();&#10;&#10;Implemented HighScore Array printed on new Scene.">
+      <created>1579448257606</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1579448257606</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +193,8 @@
     <MESSAGE value="Changing sound effects for.&#10;&#10;PoweredUp.wav::&#10;playerEaten.wav::&#10;NewEvilPuffEntry.wav" />
     <MESSAGE value="Implemented log on coin pickup and evilPuff eaten.&#10;&#10;When game over, log traces totalScore" />
     <MESSAGE value="Updated log to an: if (file.exists()==false)&#10;then create a new log.&#10;&#10;Otherwise, maintain same log!! HURAAAAAYYY" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated log to an: if (file.exists()==false)&#10;then create a new log.&#10;&#10;Otherwise, maintain same log!! HURAAAAAYYY" />
+    <MESSAGE value="Updated to better functional saveToFile();&#10;&#10;Implemented HighScore Array printed on new Scene." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to better functional saveToFile();&#10;&#10;Implemented HighScore Array printed on new Scene." />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579245068721">
@@ -212,10 +214,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579245065368" />
-    <state x="1105" y="36" key="CommitChangelistDialog2" timestamp="1579419969480">
+    <state x="1105" y="36" key="CommitChangelistDialog2" timestamp="1579448256681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1105" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579419969480" />
+    <state x="1105" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448256681" />
     <state x="591" y="193" key="FileChooserDialogImpl" timestamp="1579245035395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -225,35 +227,35 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="601" y="288" width="358" height="247" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1578317744112" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579448124181">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579450204940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448124181" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579448124181">
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579450204940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448124181" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579448124181">
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579450204940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448124181" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578560604580" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579448124181">
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579450204940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579448124181" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579450204940" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
     <state x="311" y="0" key="SettingsEditor" timestamp="1579245038390">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="311" y="0" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579245038390" />
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578302874389" />
-    <state x="625" y="269" key="Vcs.Push.Dialog.v2" timestamp="1579419971465">
+    <state x="625" y="269" key="Vcs.Push.Dialog.v2" timestamp="1579449280332">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="625" y="269" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579419971465" />
+    <state x="625" y="269" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579449280332" />
     <state x="581" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1579442924502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -2,7 +2,6 @@ package PokeBounce.control;
 
 import com.almasb.fxgl.app.FXGLMenu;
 import com.almasb.fxgl.app.MenuType;
-import com.almasb.fxgl.app.SceneFactory;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
@@ -10,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
@@ -17,15 +17,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.jetbrains.annotations.NotNull;
-import org.w3c.dom.css.Rect;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.zip.CheckedOutputStream;
 
 public class PokeBounceMainMenu extends FXGLMenu {
     public PokeBounceMainMenu(MenuType type) {
@@ -95,7 +93,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
         for (Map.Entry<String, Integer> entry : reverseSorted.entrySet()) {
             BorderPane borderPane = new BorderPane();
 
-            Label label1 = new Label("  " + position + ", " + entry.getKey());
+            Label label1 = new Label("  " + position + ". " + entry.getKey());
             borderPane.setLeft(label1);
 
             Label label2 = new Label(entry.getValue() + "  ");
@@ -109,7 +107,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
         stage.setWidth(600);
         stage.setHeight(600);
         stage.setResizable(false);
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(vBox);
         stage.setScene(scene);
         stage.show();
@@ -196,6 +194,8 @@ public class PokeBounceMainMenu extends FXGLMenu {
         }
 
     }
+
+
 }
 
 
