@@ -105,8 +105,9 @@ public class PokeBounceMainMenu extends FXGLMenu {
             position++;
             vBox.getChildren().addAll(borderPane);
 
-            //vBox.setBackground(background);
+
             vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0;");
+
             //create a input stream
             FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/GameMenuEvilPuff.png");
 //
@@ -122,7 +123,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
             Background background = new Background(backgroundimage);
             vBox.setBackground(background);
                     //"-fx-background-color: rgba(0,200,100, 0.25);");
-                    // SETS TEXT SIZE; style and weight and BACKGROND
+                    // SETS TEXT SIZE; style and weight and BACKGROUND
         }
         Stage stage = new Stage();
         stage.setTitle("PokeBounce - Highscores");
