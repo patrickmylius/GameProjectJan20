@@ -1,4 +1,5 @@
 PokeBounce High Scores 
- ************************************
-Player unknown: your score ended as: 250
- ************************************
+************************************
+******* Player Unknown score: 750 ******** 
+
+******* Player Unknown score: 250 ******** 

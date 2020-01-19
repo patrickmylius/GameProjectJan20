@@ -22,10 +22,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -58,13 +58,13 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setMenuEnabled(true);
 
 
-
         gameSettings.setSceneFactory(new SceneFactory() {
             @Override
             public FXGLMenu newMainMenu() {
                 return new PokeBounceMainMenu(MenuType.MAIN_MENU);
             }
-            public FXGLMenu newGameMenu(){
+
+            public FXGLMenu newGameMenu() {
                 return new PokeBounceGameMenu(MenuType.GAME_MENU);
             }
 
@@ -93,7 +93,7 @@ public class BasicGameApp extends GameApplication {
     private int playerLives = 3;
     public int totalScore;
 
-    private String log = "PokeBounce High Scores \n************************************" ;
+    private String logHeader = "PokeBounce High Scores \n************************************";
 
 
     /**
@@ -107,7 +107,6 @@ public class BasicGameApp extends GameApplication {
         Sound powerUpEntrySound = getAssetLoader().loadSound("PowerUpSpawn.wav");
 
         /** Spawns new EvilPuff every 6 seconds */
-        /**FOR LAPTOP 1920x1080 pixels*/
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
                 getAppWidth() / -(Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
@@ -117,18 +116,6 @@ public class BasicGameApp extends GameApplication {
             getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(6));
         timerAction.resume();
-
-        /**FOR STATION 57600x1080 pixels*/
-/**
-        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                getAppWidth() / -(Math.random() * 200) + (0.75));
-        TimerAction timerAction = getGameTimer().runAtInterval(() ->
-        {
-            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
-                    getAppWidth() / (Math.random() * 200) + (0.75));
-            getAudioPlayer().playSound(evilPuffEntrySound);
-        }, Duration.seconds(6));
-        timerAction.resume(); */
 
         /** Spawns new coin every 8 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
@@ -229,7 +216,7 @@ public class BasicGameApp extends GameApplication {
                         runOnce(() -> {
                             respawn();
                             /** Sets how long player is removed from map, before respawning timer starts*/
-                        }, Duration.seconds(1.5));
+                        }, Duration.seconds(2));
 
                     }
                 }
@@ -318,8 +305,8 @@ public class BasicGameApp extends GameApplication {
                 if (rightWallTouched) //If player unit collides with right wall,"Move Right" function stops until false.
                     return;
 
-                //player.translateX(5); //Move right, 5 pixels, for 5760x1080
-                player.translateX(6); //Move right 6 pixels for 1920x1080
+                player.translateX(3); //Move right, 3 pixels, for 5760x1080
+                //player.translateX(6); //Move right 6 pixels for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved right
             }
         }, KeyCode.D);
@@ -330,8 +317,8 @@ public class BasicGameApp extends GameApplication {
                 if (leftWallTouched) //If player unit collides with left wall,"Move Left" function stops until false.
                     return;
 
-                //player.translateX(-5); //move left 5 pixels. for 5760x1080
-                player.translateX(-6); //move left 6 pixels, for 1920x1080
+                player.translateX(-3); //move left -3 pixels. for 5760x1080
+                //player.translateX(-6); //move left -6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved left
             }
         }, KeyCode.A);
@@ -342,8 +329,8 @@ public class BasicGameApp extends GameApplication {
                 if (topWallTouched) //If player unit collides with top wall,"Move Up" function stops until false.
                     return;
 
-                //player.translateY(-5); //move 5 pixels up, for 5760x1080
-                player.translateY(-6); //move up 6 pixels, for 1920x1080
+                player.translateY(-3); //move -3 pixels up, for 5760x1080
+                //player.translateY(-6); //move up -6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); tracks pixels moved up
             }
         }, KeyCode.W);
@@ -354,8 +341,8 @@ public class BasicGameApp extends GameApplication {
                 if (bottomWallTouched) //If player unit collides with bottom wall,"Move Down" function stops until false.
                     return;
 
-                //player.translateY(5); //move 5 pixels down, for 5760x1080
-                player.translateY(6); //move down 6 pixels, for 1920x1080
+                player.translateY(3); //move 3 pixels down, for 5760x1080
+                //player.translateY(6); //move down 6 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved down
             }
         }, KeyCode.S);
@@ -370,11 +357,10 @@ public class BasicGameApp extends GameApplication {
 
 
 /** When player is game over, log saves score to "totalScore.txt" */
-            String logmessage = "\nPlayer unknown: your score ended as: ";
-            System.out.println(logmessage + totalScore);
-            log = log + logmessage + totalScore + "\n************************************";
+            //String logmessage = "\nPlayer unknown: your score ended as: ";
+            //System.out.println(logmessage + totalScore);
+            //log = log + logmessage + totalScore + "\n************************************";
             saveToFile(totalScore);
-
 
 
         }
@@ -456,10 +442,6 @@ public class BasicGameApp extends GameApplication {
         /** adds 250 points to totalScore for the log, every time player picks up coin */
         totalScore = totalScore + 250;
 
-        //highScoreLog = highScoreLog - highScoreLog;
-
-
-
     }
 
     /**
@@ -479,16 +461,7 @@ public class BasicGameApp extends GameApplication {
         Sound poweredUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().playSound(poweredUp);
 
-
-        //player.getViewComponent().clearChildren();
-        //player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
-
         FXGL.set("poweredUp", true);
-
-        //for (int i = 0; i < FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).size(); i++) {
-        //FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).get(i).getComponent
-        //(EvilPuffComponent.class).setPoweredUp(true);
-        // }
 
 
     }
@@ -500,15 +473,7 @@ public class BasicGameApp extends GameApplication {
         Sound poweredUp = getAssetLoader().loadSound("PoweredUp.wav");
         getAudioPlayer().stopSound(poweredUp);
 
-        // player.getViewComponent().clearChildren();
-        //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
-
         FXGL.set("poweredUp", false);
-
-        //for (int i = 0; i < FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).size(); i++) {
-        //FXGL.getGameWorld().getEntitiesByType(EntityType.ENEMY).get(i).getComponent
-        // (EvilPuffComponent.class).setPoweredUp(false);
-        //}
 
 
     }
@@ -526,18 +491,7 @@ public class BasicGameApp extends GameApplication {
         vars.put("safeRespawn", false);
 
 
-
     }
-
-
-    /*
-     * private boolean requestNewGame = false;
-     * <p>
-     * private void gameOver() { if (playerLives == 0) {
-     * getDisplay().showMessageBox("Demo Over, Press OK to exit", this::gameOver);
-     * }
-     * }
-     */
 
 
     private void respawn() {
@@ -554,24 +508,47 @@ public class BasicGameApp extends GameApplication {
 
         FXGL.runOnce(() -> {
             safeRespawn = false;
-            // player.getViewComponent().clearChildren();
-            //player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
             /** Sets respawn timer, where player is not able to collide with evilPuffs for the duration*/
-        }, Duration.seconds(2.5));
+        }, Duration.seconds(4.5));
 
 
     }
-/** saves players score to file method */
+
+    /**
+     * saves players score to file method
+     */
     public void saveToFile(int totalScore) {
-        try {
-            File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
-            PrintWriter output = new PrintWriter(file);
-            output.print(log);
-            output.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("Sorry, Highscore save was failed, try again! ");
-            e.printStackTrace();
+
+        //try {
+           // File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR STATION */
+            // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
+            //PrintWriter output = new PrintWriter(file);
+            //output.print(log);
+            //output.close();
+        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+        // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
+        System.out.println("Your score: " + totalScore);
+
+        try {if (file.exists()==false) {
+            System.out.println("Sorry, we had to make a new logFile.");
+            file.createNewFile();
+            PrintWriter out = new PrintWriter(new FileWriter(file, true));
+            out.append(logHeader);
+            out.close();
         }
+        PrintWriter out = new PrintWriter(new FileWriter(file, true));
+            out.append("\n" + "******* " + "Player Unknown " + "score: " + totalScore + " ******** " + "\n");
+            out.close();
+        } catch (IOException e) {
+            System.out.println("ERROR, could not LOG.");
+        }
+
+
+
+        //catch (FileNotFoundException e) {
+            //System.out.println("Sorry, Highscore save was failed, try again! ");
+           // e.printStackTrace();
+        //}
     }
 
 

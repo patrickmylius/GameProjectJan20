@@ -37,7 +37,10 @@ public class BasicGameFactory implements EntityFactory {
                 .from(data)
                 .viewWithBBox("EvilPuff1.png")
                 .with(new CollidableComponent(true))
-                .with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
+                /**For Laptop 1920x1080*/
+                //with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
+                /**For Station 5760x1080*/
+                .with("velocity", new Point2D((Math.random() * 1) + 2, (Math.random() * 1) + 2))
                 .with(new EvilPuffComponent())
                 .build();
 
@@ -72,15 +75,4 @@ public class BasicGameFactory implements EntityFactory {
                 .build();
 
     }
-/**
-    @Spawns("BackGroundImage")
-    public Entity BackGroundImage(SpawnData data){
-        return entityBuilder()
-                .type(EntityType.BACKGROUND)
-                .from(data)
-                .view(texture("BackgroundImageSprite.png").toAnimatedTexture(2, Duration.seconds(0.8)).loop())
-                .with(new IrremovableComponent())
-                .build();
-    }
-*/
 }
