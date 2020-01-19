@@ -104,21 +104,24 @@ public class PokeBounceMainMenu extends FXGLMenu {
             position++;
             vBox.getChildren().addAll(borderPane);
             vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; " +
-                    "-fx-background-color: rgba(0,100,100, 0.5)"); // SETS TEXT SIZE; style and weight and BACKGROND
+                    "-fx-background-color: rgba(0,200,100, 0.25);");
+                    // SETS TEXT SIZE; style and weight and BACKGROND
         }
         Stage stage = new Stage();
-        stage.setTitle("Highscores");
+        stage.setTitle("PokeBounce - Highscores");
         stage.setWidth(600);
         stage.setHeight(600);
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(vBox);
+        stage.getIcons().add(new Image("assets/textures/EvilPuff1.png"));
         stage.setScene(scene);
         stage.show();
 
     }
     public static LinkedHashMap<String, Integer> getHighScoreMap() throws FileNotFoundException {
-        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+        File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //LAPTOP
+        //File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); // STATION
 
         ArrayList<String> players = new ArrayList<>();
         ArrayList<Integer> scores = new ArrayList<>();
