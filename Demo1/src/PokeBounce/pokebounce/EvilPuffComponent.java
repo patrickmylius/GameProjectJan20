@@ -29,20 +29,20 @@ public class EvilPuffComponent extends Component {
             entity.getViewComponent().addChild(FXGL.texture("EvilPuff1.png"));
         }
 
-        if (entity.getX() <= 0
-                && entity.getBottomY() <= 600) {
+        if (entity.getX() < 0) {
+            entity.setX(0);
             entity.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
         }
-        if (entity.getRightX() >= 600
-                && entity.getBottomY() <= 600) {
+        if (entity.getRightX() > 600) {
+            entity.setX(600 - 55);
             entity.setProperty("velocity", new Point2D(-velocity.getX(), velocity.getY()));
         }
-        if (entity.getY() <= 0) {
+        if (entity.getY() < 0) {
             entity.setY(0);
             entity.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
         }
 
-        if (entity.getBottomY() >= 600) {
+        if (entity.getBottomY() > 600) {
             entity.setY(600 - 55);
             entity.setProperty("velocity", new Point2D(velocity.getX(), -velocity.getY()));
 

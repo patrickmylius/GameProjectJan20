@@ -4,6 +4,7 @@ import PokeBounce.EntityType;
 import PokeBounce.control.PokeBounceGameMenu;
 import PokeBounce.control.PokeBounceMainMenu;
 import com.almasb.fxgl.app.*;
+import com.almasb.fxgl.audio.Music;
 import com.almasb.fxgl.audio.Sound;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -24,8 +25,6 @@ import javafx.util.Duration;
 
 import java.io.*;
 import java.util.Map;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -90,10 +89,12 @@ public class BasicGameApp extends GameApplication {
     private Entity player;
     private Entity backGroundImg;
 
-    private int playerLives = 3;
+    private int playerLives;
     public int totalScore;
+    private String playerName;
+    public static Music music;
 
-    private String logHeader = "************************************\nPokeBounce High Scores \n************************************";
+    private String log = "************************************\nPokeBounce High Scores \n************************************";
 
 
     /**
@@ -101,11 +102,18 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void initGame() {
+        music = getAssetLoader().loadMusic("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
+        getAudioPlayer().playMusic(music);
         getGameWorld().addEntityFactory(new BasicGameFactory());
         Sound evilPuffEntrySound = getAssetLoader().loadSound("NewEvilPuffEntry.wav");
         Sound coinEntrySound = getAssetLoader().loadSound("NewCoinEntry.wav");
         Sound powerUpEntrySound = getAssetLoader().loadSound("PowerUpSpawn.wav");
 
+        playerLives = 3;
+        safeRespawn = false;
+        hasPowerUp = false;
+
+        /**FOR STATION 57600x1080 pixels*/
         /** Spawns new EvilPuff every 6 seconds */
         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
                 getAppWidth() / -(Math.random() * 200) + (1));
@@ -116,6 +124,18 @@ public class BasicGameApp extends GameApplication {
             getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(6));
         timerAction.resume();
+
+        /**FOR laptop 1920x1080 pixels*/
+        /**evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+         getAppWidth() / -(Math.random() * 200) + (0.75));
+         TimerAction timerAction = getGameTimer().runAtInterval(() ->
+         {
+         evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+         getAppWidth() / (Math.random() * 200) + (0.75));
+         getAudioPlayer().playSound(evilPuffEntrySound);
+         }, Duration.seconds(6));
+         timerAction.resume(); */
+
 
         /** Spawns new coin every 8 second*/
         coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
@@ -292,7 +312,7 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void onPreInit() {
-        loopBGM("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
+        //  loopBGM("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
     }
 
     @Override
@@ -354,41 +374,55 @@ public class BasicGameApp extends GameApplication {
 
             Sound gameOver = getAssetLoader().loadSound("GameOver.wav");
             getAudioPlayer().playSound(gameOver);
+            getAudioPlayer().stopMusic(music);
+
+            getDisplay().showInputBoxWithCancel("Write the name to be added to the highscore.", p -> !p.isEmpty(), (String) -> {
+                setPlayerName(String);
+                if (String.isEmpty()) {
+                    System.out.println("Score not saved.");
+                } else {
+                    String playerLog = "\nPlayer " + playerName + ": your score ended as: ";
+                    System.out.println(log + totalScore);
+                    log = log + playerLog + totalScore + "\n************************************";
+                    saveToFile(totalScore);
+                }
+                getGameController().gotoMainMenu();
+            });
 
 
 /** When player is game over, log saves score to "totalScore.txt" */
             //String logmessage = "\nPlayer unknown: your score ended as: ";
             //System.out.println(logmessage + totalScore);
             //log = log + logmessage + totalScore + "\n************************************";
-            saveToFile(totalScore);
+            //saveToFile(totalScore);
 
 
-        }
+
         /** if player is Game Over, resets playerLives, and takes him to main menu */
-        if (playerLives == 0) {
-            getGameController().gotoMainMenu();
-            playerLives++;
-            playerLives++;
-            playerLives++;
+        //if (playerLives == 0) {
+        //  getGameController().gotoMainMenu();
+        // playerLives++;
+        // playerLives++;
+        //playerLives++;
 
-            //
-        }
-        if (hasPowerUp) {
-            player.getViewComponent().clearChildren();
-            player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
-        }
-        if (safeRespawn && !hasPowerUp) {
-            player.getViewComponent().clearChildren();
-            player.getViewComponent().addChild(FXGL.texture("respawnPlayer.gif"));
-        }
-        if (!safeRespawn && !hasPowerUp) {
-            player.getViewComponent().clearChildren();
-            player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
-
-        }
-
+        //
+    }
+        if(hasPowerUp) {
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("playerBuffed.png"));
+    }
+        if(safeRespawn &&!hasPowerUp) {
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("respawnPlayer.gif"));
+    }
+        if(!safeRespawn &&!hasPowerUp) {
+        player.getViewComponent().clearChildren();
+        player.getViewComponent().addChild(FXGL.texture("PokePlayerUnit1.png"));
 
     }
+
+
+}
 
 
     @Override
@@ -442,6 +476,10 @@ public class BasicGameApp extends GameApplication {
         /** adds 250 points to totalScore for the log, every time player picks up coin */
         totalScore = totalScore + 250;
 
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
     /**
@@ -519,37 +557,69 @@ public class BasicGameApp extends GameApplication {
      */
     public void saveToFile(int totalScore) {
 
-        //try {
-           // File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR STATION */
-            // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
-            //PrintWriter output = new PrintWriter(file);
-            //output.print(log);
-            //output.close();
-        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
-        // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
-        System.out.println("Your score: " + totalScore);
-
-        try {if (file.exists()==false) {
-            System.out.println("Sorry, we had to make a new logFile.");
-            file.createNewFile();
-            PrintWriter out = new PrintWriter(new FileWriter(file, true));
-            out.append(logHeader);
-            out.close();
-        }
-        PrintWriter out = new PrintWriter(new FileWriter(file, true));
-            out.append("\n" + "\n******* " + "Player Unknown " + "score: " + totalScore + " ******** " + "\n");
-            out.close();
+        try {
+            File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+            if (file.exists()) {
+                if (PokeBounceMainMenu.getHighScoreMap().containsKey(playerName)) {
+                    if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
+                        System.out.println("Old high score not beaten, score not saved");
+                    }
+                    else {
+                        BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
+                        String text = "\nPlayer " + playerName + ": your score ended as: " + totalScore + "\n************************************";
+                        output.append(text);
+                        output.close();
+                    }
+                }
+                else {
+                    BufferedWriter output = new BufferedWriter(new FileWriter(file, true));
+                    String text = "\nPlayer " + playerName + ": your score ended as: " + totalScore + "\n************************************";
+                    output.append(text);
+                    output.close();
+                }
+            }
+            else {
+                PrintWriter output = new PrintWriter(file);
+                output.print(log);
+                output.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Sorry, Highscore save was failed, try again! ");
+            e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("ERROR, could not LOG.");
+            e.printStackTrace();
         }
 
+        //try {
+        // File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR STATION */
+        // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
+        //PrintWriter output = new PrintWriter(file);
+        //output.print(log);
+        //output.close();
+        //File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+        // File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR LAPTOP */
+        //System.out.println("Your score: " + totalScore);
+
+        ////  if (file.exists() == false) {
+               // System.out.println("Sorry, we had to make a new logFile.");
+              //  file.createNewFile();
+               // PrintWriter out = new PrintWriter(new FileWriter(file, true));
+               // out.append(logHeader);
+              //  out.close();
+          //  }
+          //  PrintWriter out = new PrintWriter(new FileWriter(file, true));
+         //   out.append("\n" + "\n******* " + "Player Unknown " + "score: " + totalScore + " ******** " + "\n");
+          //  out.close();
+      //  } catch (IOException e) {
+       ////  }
 
 
         //catch (FileNotFoundException e) {
-            //System.out.println("Sorry, Highscore save was failed, try again! ");
-           // e.printStackTrace();
+        //System.out.println("Sorry, Highscore save was failed, try again! ");
+        // e.printStackTrace();
         //}
-    }
+   ////
+        }
 
 
     public static void main(String[] args) {

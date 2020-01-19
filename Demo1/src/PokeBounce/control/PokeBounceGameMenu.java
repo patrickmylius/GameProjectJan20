@@ -1,5 +1,5 @@
 package PokeBounce.control;
-
+import PokeBounce.pokebounce.BasicGameApp;
 import com.almasb.fxgl.app.FXGLMenu;
 import com.almasb.fxgl.app.MenuType;
 import com.almasb.fxgl.dsl.FXGL;
@@ -17,15 +17,24 @@ public class PokeBounceGameMenu extends FXGLMenu {
     public PokeBounceGameMenu(MenuType type) {
         super(MenuType.GAME_MENU);
 
-        var button = new PokeBounceGameMenu.GameMenuButton("Continue Game", () -> this.fireResume());
+        var button = new GameMenuButton("Continue Game", () -> this.fireResume());
         button.setTranslateX(FXGL.getAppWidth() / 2 - 300 / 2);
         button.setTranslateY(FXGL.getAppHeight() / 4 - 40 / 2);
 
-        var rsButton = new PokeBounceGameMenu.GameMenuButton("Restart Game", () -> this.fireNewGame());
+        var rsButton = new GameMenuButton("Restart Game", () -> this.fireNewGame());
         rsButton.setTranslateX(FXGL.getAppWidth() / 2 - 300 / 2);
         rsButton.setTranslateY(FXGL.getAppWidth() / 1.75 - 40 / 2);
 
-        var mmButton = new PokeBounceGameMenu.GameMenuButton("Main Menu", () -> this.fireExitToMainMenu()); // Make button show highScores
+        var mmButton = new GameMenuButton("Main Menu", () ->
+        { FXGL.getDisplay().showConfirmationBox("Are you sure?", yes -> {
+            if (yes) {
+                FXGL.getGameController().gotoMainMenu();
+                FXGL.getAudioPlayer().stopMusic(BasicGameApp.music);
+            }
+        });
+
+        }); // Make button show highScores
+
         mmButton.setTranslateX(FXGL.getAppWidth() / 2 - 300 / 2);
         mmButton.setTranslateY(FXGL.getAppHeight() / 1.5 - 40 / 2);
 

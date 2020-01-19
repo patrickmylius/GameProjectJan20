@@ -2,19 +2,29 @@ package PokeBounce.control;
 
 import com.almasb.fxgl.app.FXGLMenu;
 import com.almasb.fxgl.app.MenuType;
+import com.almasb.fxgl.app.SceneFactory;
 import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.css.Rect;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 import java.util.zip.CheckedOutputStream;
 
 public class PokeBounceMainMenu extends FXGLMenu {
@@ -25,7 +35,13 @@ public class PokeBounceMainMenu extends FXGLMenu {
         button.setTranslateX(FXGL.getAppWidth() / 2 - 300 / 2);
         button.setTranslateY(FXGL.getAppHeight() / 4 - 40 / 2);
 
-        var hsButton = new PokeBounceButton("View Highscores", () -> this.fireExit());
+        var hsButton = new PokeBounceButton("View Highscores", () -> {
+            try {
+                showScores();
+            } catch (FileNotFoundException e) {
+                 e.printStackTrace();
+            }
+        });
         hsButton.setTranslateX(FXGL.getAppWidth() / 2 - 300 / 2);
         hsButton.setTranslateY(FXGL.getAppWidth() / 3 - 40 / 2);
 
@@ -66,6 +82,71 @@ public class PokeBounceMainMenu extends FXGLMenu {
     @Override
     protected Node createProfileView(String profileName) {
         return new Text(profileName);
+    }
+
+    protected void showScores() throws FileNotFoundException {
+        LinkedHashMap<String, Integer> reverseSorted = getHighScoreMap();
+
+        int position = 1;
+
+        VBox vBox = new VBox();
+        vBox.setSpacing(5);
+
+        for (Map.Entry<String, Integer> entry : reverseSorted.entrySet()) {
+            BorderPane borderPane = new BorderPane();
+
+            Label label1 = new Label("  " + position + ", " + entry.getKey());
+            borderPane.setLeft(label1);
+
+            Label label2 = new Label(entry.getValue() + "  ");
+            borderPane.setRight(label2);
+
+            position++;
+            vBox.getChildren().add(borderPane);
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Highscores");
+        stage.setWidth(600);
+        stage.setHeight(600);
+        stage.setResizable(false);
+        stage.initStyle(StageStyle.UTILITY);
+        Scene scene = new Scene(vBox);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public static LinkedHashMap<String, Integer> getHighScoreMap() throws FileNotFoundException {
+        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+
+        ArrayList<String> players = new ArrayList<>();
+        ArrayList<Integer> scores = new ArrayList<>();
+        Map<String, Integer> list = new HashMap<>();
+
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNext()) {
+            scanner.next();
+            if (scanner.hasNext("Player")) {
+                scanner.next();
+                players.add(scanner.next().replace(":", ""));
+                scanner.next();
+                scanner.next();
+                scanner.next();
+                scanner.next();
+                scores.add(scanner.nextInt());
+            }
+        }
+
+        for (int i = 0; i < players.size(); i++) {
+            list.put(players.get(i), scores.get(i));
+        }
+
+        LinkedHashMap<String, Integer> reverseSorted = new LinkedHashMap<>();
+        list.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEachOrdered(x -> reverseSorted.put(x.getKey(), x.getValue()));
+
+        return reverseSorted;
     }
     private static class PokeBounceButton extends StackPane {
         public PokeBounceButton(String name, Runnable action) {

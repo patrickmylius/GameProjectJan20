@@ -1,5 +1,9 @@
 ************************************
 PokeBounce High Scores 
 ************************************
-
-******* Player Unknown score: 1000 ******** 
+Player Patrick: your score ended as: 4250
+************************************
+Player PalleManden: your score ended as: 3250
+************************************
+Player Lort: your score ended as: 500
+************************************
