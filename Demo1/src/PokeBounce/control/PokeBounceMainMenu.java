@@ -104,7 +104,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
             position++;
             vBox.getChildren().addAll(borderPane);
             vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; " +
-                    "-fx-background-color: rgba(0,100,100, 0.5)"); // SETS TEXT SIZE; style and weight and BACKGROND
+                    "-fx-background-color: rgba(0,300,100, 0.5)"); // SETS TEXT SIZE; style and weight and BACKGROND
         }
         Stage stage = new Stage();
         stage.setTitle("Highscores");
