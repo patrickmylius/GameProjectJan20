@@ -93,7 +93,7 @@ public class BasicGameApp extends GameApplication {
     private int playerLives = 3;
     public int totalScore;
 
-    private String logHeader = "PokeBounce High Scores \n************************************";
+    private String logHeader = "************************************\nPokeBounce High Scores \n************************************";
 
 
     /**
@@ -537,7 +537,7 @@ public class BasicGameApp extends GameApplication {
             out.close();
         }
         PrintWriter out = new PrintWriter(new FileWriter(file, true));
-            out.append("\n" + "******* " + "Player Unknown " + "score: " + totalScore + " ******** " + "\n");
+            out.append("\n" + "\n******* " + "Player Unknown " + "score: " + totalScore + " ******** " + "\n");
             out.close();
         } catch (IOException e) {
             System.out.println("ERROR, could not LOG.");
