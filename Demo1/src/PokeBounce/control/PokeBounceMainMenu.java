@@ -105,7 +105,8 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             Label label2 = new Label(entry.getValue() + "  ");
             borderPane.setRight(label2);
-            label2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-border-color: white");
+            label2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)");
+
 
             position++;
             vBox.getChildren().addAll(borderPane);

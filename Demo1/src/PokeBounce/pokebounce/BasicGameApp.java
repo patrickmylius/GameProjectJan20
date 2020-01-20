@@ -39,7 +39,9 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH.....
  */
 //TODO - Design new player, design new Enemy.
-    //TODO - Design new game map
+//TODO - Design new game map
+//TODO - FIX Stroke / Outline on HighScore labels
+//TODO - CHANGE GAME THEME MUSIC
 
 
 public class BasicGameApp extends GameApplication {
