@@ -27,6 +27,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import static com.almasb.fxgl.dsl.FXGL.getAssetLoader;
+import static com.almasb.fxgl.dsl.FXGL.getAudioPlayer;
+
 public class PokeBounceMainMenu extends FXGLMenu {
     public PokeBounceMainMenu(MenuType type) {
         super(MenuType.MAIN_MENU);

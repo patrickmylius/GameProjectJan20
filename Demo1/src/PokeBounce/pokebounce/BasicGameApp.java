@@ -93,6 +93,7 @@ public class BasicGameApp extends GameApplication {
     public int totalScore;
     private String playerName;
     public static Music music;
+    public static Music menuMusic;
 
     private String log = "************************************\nPokeBounce High Scores \n************************************";
 
@@ -102,6 +103,7 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void initGame() {
+        getAudioPlayer().stopMusic(menuMusic);
         music = getAssetLoader().loadMusic("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
         getAudioPlayer().playMusic(music);
         getGameWorld().addEntityFactory(new BasicGameFactory());
@@ -313,7 +315,8 @@ public class BasicGameApp extends GameApplication {
      */
     @Override
     protected void onPreInit() {
-        //  loopBGM("Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3");
+        BasicGameApp.menuMusic = getAssetLoader().loadMusic("MainMenuMusic.mp3");
+        getAudioPlayer().playMusic(BasicGameApp.menuMusic);
     }
 
     @Override
