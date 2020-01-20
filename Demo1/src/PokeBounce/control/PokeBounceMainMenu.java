@@ -27,6 +27,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
+import static com.almasb.fxgl.dsl.FXGL.getAssetLoader;
+import static com.almasb.fxgl.dsl.FXGL.getAudioPlayer;
+
 public class PokeBounceMainMenu extends FXGLMenu {
     public PokeBounceMainMenu(MenuType type) {
         super(MenuType.MAIN_MENU);
@@ -98,51 +101,47 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             Label label1 = new Label("  " + position + ". " + entry.getKey());
             borderPane.setLeft(label1);
+            label1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)");
 
             Label label2 = new Label(entry.getValue() + "  ");
             borderPane.setRight(label2);
+            label2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)");
+
 
             position++;
             vBox.getChildren().addAll(borderPane);
+            vBox.setStyle("-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; ");
 
+            //Create an input stream
+            FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif");
 
-            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0;");
-
-            //create a input stream
-            FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/GameMenuEvilPuff.png");
-//
-//        // create a image
+            //Create an image
             Image img = new Image(fileInput);
-//
-//        // create a background image
-            BackgroundImage backgroundimage = new BackgroundImage(img,
+
+            //Create a background image
+
+            BackgroundImage highscoreImage = new BackgroundImage(img,
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.DEFAULT,
+                    BackgroundPosition.CENTER,
                     BackgroundSize.DEFAULT);
-            Background background = new Background(backgroundimage);
+
+            Background background = new Background(highscoreImage);
             vBox.setBackground(background);
-                    //"-fx-background-color: rgba(0,200,100, 0.25);");
-                    // SETS TEXT SIZE; style and weight and BACKGROUND
         }
         Stage stage = new Stage();
-        stage.setTitle("PokeBounce - Highscores");
+        stage.setTitle("Highscores");
         stage.setWidth(600);
         stage.setHeight(600);
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(vBox);
-
-
-
-        stage.getIcons().add(new Image("assets/textures/EvilPuff1.png"));
         stage.setScene(scene);
         stage.show();
 
     }
     public static LinkedHashMap<String, Integer> getHighScoreMap() throws FileNotFoundException {
-        File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //LAPTOP
-        //File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); // STATION
+        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
 
         ArrayList<String> players = new ArrayList<>();
         ArrayList<Integer> scores = new ArrayList<>();

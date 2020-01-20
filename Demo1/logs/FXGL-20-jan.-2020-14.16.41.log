@@ -1,0 +1,581 @@
+14:16:29.447 [main                     ] DEBUG GameApplication      - Logger initialized
+14:16:29.466 [main                     ] DEBUG GameApplication      - Logging settings
+Title: PokeBounce - Zealand
+Version: 0.1
+Width: 600
+Height: 600
+Fullscreen: false
+Intro: false
+Menus: true
+Profiling: false
+Single step:false
+App Mode: DEVELOPER
+Menu Key: ESCAPE
+Stage Style: DECORATED
+Scene Factory: class PokeBounce.pokebounce.BasicGameApp$1
+Dialog Factory: class com.almasb.fxgl.ui.FXGLDialogFactory
+UI Factory: class com.almasb.fxgl.ui.FXGLUIFactory
+
+14:16:29.779 [JavaFX Application Thread] DEBUG Engine               - Initializing FXGL
+14:16:29.779 [JavaFX Application Thread] INFO  Engine               - FXGL-11.7 (05.01.2020 09.46) on WINDOWS (J:11.0.5 FX:10.0.2-internal)
+14:16:29.779 [JavaFX Application Thread] INFO  Engine               - Source code and latest versions at: https://github.com/AlmasB/FXGL
+14:16:29.779 [JavaFX Application Thread] INFO  Engine               -              Join the FXGL chat at: https://gitter.im/AlmasB/FXGL
+14:16:29.779 [JavaFX Application Thread] DEBUG Engine               - Initializing environment variables
+14:16:29.784 [JavaFX Application Thread] DEBUG Engine               - Logging environment variables
+14:16:29.784 [JavaFX Application Thread] DEBUG Engine               - achievements: []
+14:16:29.784 [JavaFX Application Thread] DEBUG Engine               - sceneStack: com.almasb.fxgl.app.Engine@fc384c
+14:16:29.784 [JavaFX Application Thread] DEBUG Engine               - language: ObjectProperty [value: ENGLISH]
+14:16:29.785 [JavaFX Application Thread] DEBUG Engine               - isCloseConfirmation: false
+14:16:29.785 [JavaFX Application Thread] DEBUG Engine               - isProfilingEnabled: false
+14:16:29.785 [JavaFX Application Thread] DEBUG Engine               - soundNotification: core/notification.wav
+14:16:29.785 [JavaFX Application Thread] DEBUG Engine               - devShowBBoxProperty: BooleanProperty [value: false]
+14:16:29.786 [JavaFX Application Thread] DEBUG Engine               - pixelsPerMeter: 50.0
+14:16:29.786 [JavaFX Application Thread] DEBUG Engine               - overlayRoot: Group@719607bb
+14:16:29.786 [JavaFX Application Thread] DEBUG Engine               - appIcon: EvilPuffIcon.png
+14:16:29.786 [JavaFX Application Thread] DEBUG Engine               - soundMenuBack: menu/back.wav
+14:16:29.786 [JavaFX Application Thread] DEBUG Engine               - isFullScreenAllowed: false
+14:16:29.787 [JavaFX Application Thread] DEBUG Engine               - isIntroEnabled: false
+14:16:29.787 [JavaFX Application Thread] DEBUG Engine               - eventBus: com.almasb.fxgl.event.EventBus@3644c37f
+14:16:29.788 [JavaFX Application Thread] DEBUG Engine               - fontMono: lucida_console.ttf
+14:16:29.788 [JavaFX Application Thread] DEBUG Engine               - soundMenuSelect: menu/select.wav
+14:16:29.788 [JavaFX Application Thread] DEBUG Engine               - isWindows: true
+14:16:29.788 [JavaFX Application Thread] DEBUG Engine               - isMobile: false
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - height: 600
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - isExperimentalNative: false
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - isSingleStep: false
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - cSSList: [fxgl_dark.css]
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - fontGame: Abel-Regular.ttf
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - menuKey: ESCAPE
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - devShowPositionProperty: BooleanProperty [value: false]
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - versionCheckDays: 7
+14:16:29.789 [JavaFX Application Thread] DEBUG Engine               - masterTimer: com.almasb.fxgl.time.Timer@579bb3a3
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - configClass: Optional.empty
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - isFullScreenFromStart: false
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - version: 0.1
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - fullScreen: BooleanProperty [value: false]
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - randomSeed: -1
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - dialogFactory: com.almasb.fxgl.ui.FXGLDialogFactory@786ef2b9
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - applicationMode: DEVELOPER
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - isMac: false
+14:16:29.790 [JavaFX Application Thread] DEBUG Engine               - urlGoogleForms: https://goo.gl/forms/6wrMnOBxTE1fEpOy2
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - isMenuEnabled: true
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - urlPOM: https://raw.githubusercontent.com/AlmasB/FXGL/master/pom.xml
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - profileName: user.profile
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - notificationViewClass: class com.almasb.fxgl.notification.view.XboxNotificationView
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - devSensorColorProperty: ObjectProperty [value: 0xffff00ff]
+14:16:29.791 [JavaFX Application Thread] DEBUG Engine               - sceneFactory: PokeBounce.pokebounce.BasicGameApp$1@390489d0
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - dataFileExt: .dat
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - stageStyle: DECORATED
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - isManualResizeEnabled: false
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - title: PokeBounce - Zealand
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - platform: WINDOWS
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - devBBoxColorProperty: ObjectProperty [value: 0xff0000ff]
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - isDesktop: true
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - credits: []
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolumeProperty: DoubleProperty [value: 0.5]
+14:16:29.792 [JavaFX Application Thread] DEBUG Engine               - uIFactory: com.almasb.fxgl.ui.FXGLUIFactory@29cbfab4
+14:16:29.793 [JavaFX Application Thread] DEBUG Engine               - isPreserveResizeRatio: false
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - fontText: Courier-Prime.ttf
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - isExperimentalTiledLargeMap: false
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - secondsIn24h: 60
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - runtimeInfo: RuntimeInfo(platform=WINDOWS, version=11.7, build=05.01.2020 09.46)
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - isLinux: false
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - soundMenuPress: menu/press.wav
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - urlGithub: https://github.com/AlmasB/FXGL
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - profileDir: profiles/
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - isDeveloperMenuEnabled: false
+14:16:29.795 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolumeProperty: DoubleProperty [value: 0.5]
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - isBrowser: false
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - urlLeaderboard: http://fxgl-top.herokuapp.com/
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - globalSoundVolume: 0.5
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - saveDir: saves/
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - engineServices: [class com.almasb.fxgl.audio.AudioPlayer, class com.almasb.fxgl.notification.impl.NotificationServiceProvider, class com.almasb.fxgl.achievement.AchievementManager, class com.almasb.fxgl.cutscene.CutsceneService, class com.almasb.fxgl.minigames.MiniGameService]
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - globalMusicVolume: 0.5
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - width: 600
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - saveFileExt: .sav
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - isAndroid: false
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - fontUI: VarelaRound-Regular.ttf
+14:16:29.796 [JavaFX Application Thread] DEBUG Engine               - enabledMenuItems: []
+14:16:29.797 [JavaFX Application Thread] DEBUG Engine               - isIOS: false
+14:16:29.799 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.audio.AudioPlayer
+14:16:29.800 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.notification.impl.NotificationServiceProvider
+14:16:29.800 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.achievement.AchievementManager
+14:16:29.801 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.cutscene.CutsceneService
+14:16:29.801 [JavaFX Application Thread] DEBUG Engine               - Adding new engine service: class com.almasb.fxgl.minigames.MiniGameService
+14:16:29.804 [JavaFX Application Thread] DEBUG Engine               - Loading localizations
+14:16:29.806 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/english.properties
+14:16:29.809 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/french.properties
+14:16:29.810 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/german.properties
+14:16:29.812 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/russian.properties
+14:16:29.813 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/properties/languages/hungarian.properties
+14:16:29.815 [JavaFX Application Thread] DEBUG Engine               - Registering font factories
+14:16:29.815 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/VarelaRound-Regular.ttf
+14:16:29.954 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Abel-Regular.ttf
+14:16:29.964 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/lucida_console.ttf
+14:16:29.973 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/fonts/Courier-Prime.ttf
+14:16:29.983 [JavaFX Application Thread] DEBUG Engine               - Setting UI factory
+14:16:30.054 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/fxgl_logo.png
+14:16:30.094 [JavaFX Application Thread] DEBUG MainWindow           - Creating a JavaFX scene
+14:16:30.119 [JavaFX Application Thread] DEBUG MainWindow           - Target settings size: 600.0 x 600.0
+14:16:30.119 [JavaFX Application Thread] DEBUG MainWindow           - Scaled scene size:    600.0 x 600.0
+14:16:30.120 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+14:16:30.120 [JavaFX Application Thread] DEBUG MainWindow           - Set initial scene to FXGLStartupScene
+14:16:30.126 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/textures/EvilPuffIcon.png
+14:16:30.127 [JavaFX Application Thread] DEBUG Engine               - Applying CSS: fxgl_dark.css
+14:16:30.128 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/css/fxgl_dark.css
+14:16:30.129 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/ui/cursors/fxgl_default.png
+14:16:30.130 [JavaFX Application Thread] DEBUG MainWindow           - Opening main window
+14:16:30.227 [JavaFX Application Thread] DEBUG MainWindow           - Window border size: (16.0, 39.0)
+14:16:30.228 [JavaFX Application Thread] DEBUG MainWindow           - Scaled size: 600.0 x 600.0
+14:16:30.228 [JavaFX Application Thread] DEBUG MainWindow           - Scaled ratio: (1.0, 1.0)
+14:16:30.228 [JavaFX Application Thread] DEBUG MainWindow           - Scene size: 600.0 x 600.0
+14:16:30.228 [JavaFX Application Thread] DEBUG MainWindow           - Stage size: 616.0 x 639.0
+14:16:30.238 [FXGL Background Thread 1 ] DEBUG FS                   - Loaded FSServiceImpl
+14:16:30.238 [FXGL Background Thread 1 ] DEBUG Engine               - Loading FXGL system data
+14:16:30.244 [FXGL Background Thread 1 ] DEBUG FSServiceImpl        - Reading from: E:\Spil projekt - Jan 2020\Demo1\system\fxgl.bundle
+14:16:30.251 [FXGL Background Thread 1 ] DEBUG Engine               - Bundle FXGL: {}
+14:16:30.251 [FXGL Background Thread 1 ] DEBUG Engine               - Initializing application scenes
+14:16:30.270 [FXGL Background Thread 1 ] DEBUG GameWorld            - Game world initialized
+14:16:30.307 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Physics world initialized: appHeight=600, physics.ppm=50,0
+14:16:30.309 [FXGL Background Thread 1 ] DEBUG GameScene            - Game scene initialized: 600x600
+14:16:30.328 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/MainMenuGif.gif
+14:16:30.466 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/GameMenuEvilPuff3.png
+14:16:30.478 [FXGL Background Thread 1 ] DEBUG Engine               - Application scenes initialized
+14:16:30.481 [JavaFX Application Thread] DEBUG Engine               - Running preInit()
+14:16:30.487 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Right - D
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Left - A
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Up - W
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Move Down - S
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Screenshot - P
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: System info dump - CTRL+9
+14:16:30.488 [JavaFX Application Thread] DEBUG Input                - Registered new binding: Restart - CTRL+R
+14:16:30.489 [JavaFX Application Thread] DEBUG Engine               - generateDefaultProfile()
+14:16:30.489 [JavaFX Application Thread] DEBUG Engine               - Creating default profile
+14:16:30.489 [JavaFX Application Thread] DEBUG EventBus             - Firing event: SaveEvent
+14:16:30.496 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from file system: /assets/music/MainMenuMusic.mp3
+14:16:30.569 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f28255a
+14:16:30.569 [JavaFX Application Thread] INFO  Engine               - FXGL initialization took: 0,765 sec
+14:16:30.569 [JavaFX Application Thread] DEBUG LoopRunner           - Starting loop
+14:16:30.571 [JavaFX Application Thread] DEBUG FXGLStartupScene     - STARTUP
+14:16:30.572 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:30.583 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from FXGLStartupScene and adding to PokeBounceMainMenu
+14:16:30.583 [JavaFX Application Thread] DEBUG MainWindow           - FXGLStartupScene -> PokeBounceMainMenu
+14:16:31.140 [JavaFX Application Thread] DEBUG Menu                 - fireNewGame()
+14:16:31.140 [JavaFX Application Thread] DEBUG Engine               - Starting new game
+14:16:31.144 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:31.144 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Clearing previous game
+14:16:31.144 [FXGL Background Thread 1 ] DEBUG GameWorld            - Clearing game world
+14:16:31.145 [FXGL Background Thread 1 ] DEBUG PhysicsWorld         - Clearing physics world
+14:16:31.145 [FXGL Background Thread 1 ] DEBUG GameScene            - Clearing game scene
+14:16:31.145 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Game
+14:16:31.145 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@2f28255a
+14:16:31.150 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from PokeBounceMainMenu and adding to LoadingScene
+14:16:31.151 [JavaFX Application Thread] DEBUG MainWindow           - PokeBounceMainMenu -> LoadingScene
+14:16:31.153 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/music/Pokemon Red, Yellow, Blue Battle Music- Trainer.mp3
+14:16:31.159 [FXGL Background Thread 1 ] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@1692128f
+14:16:31.166 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/sounds/NewEvilPuffEntry.wav
+14:16:31.176 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/sounds/NewCoinEntry.wav
+14:16:31.182 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/sounds/PowerUpSpawn.wav
+14:16:31.187 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/EvilPuff1.png
+14:16:31.200 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/PokePlayerUnit1.png
+14:16:31.202 [FXGL Background Thread 1 ] DEBUG AssetLoader          - Loading from file system: /assets/textures/backGroundGif.gif
+14:16:31.247 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing Physics
+14:16:31.248 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initializing UI
+14:16:31.249 [FXGL Background Thread 1 ] DEBUG InitAppTask          - Initialization Complete
+14:16:31.249 [FXGL Background Thread 1 ] INFO  InitAppTask          - Game initialization took: 0,105 sec
+14:16:31.263 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:31.270 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from LoadingScene and adding to GameScene
+14:16:31.271 [JavaFX Application Thread] DEBUG MainWindow           - LoadingScene -> GameScene
+14:16:31.280 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.312 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.318 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.318 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.326 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.326 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.332 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.332 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.339 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.339 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.342 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.342 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.353 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.353 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.358 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.359 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.366 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.366 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.373 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.373 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.374 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.374 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.387 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.387 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.390 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.390 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.401 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.401 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.407 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.407 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.415 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.415 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.422 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.422 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.429 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.429 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.436 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.436 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.439 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.439 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.450 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.450 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.455 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.455 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.464 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.464 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.471 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.471 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.478 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.478 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.485 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.485 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.492 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.492 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.499 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.500 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.503 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.503 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.513 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.513 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.519 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.519 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.526 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.526 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.532 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.533 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.534 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.534 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.546 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.547 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.550 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.550 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.561 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.561 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.567 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.567 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.575 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.575 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.583 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.583 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.596 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.596 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.599 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.599 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.615 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.615 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.631 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.631 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.645 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.645 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.647 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.647 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.658 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.659 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.663 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.663 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.673 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.673 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.679 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.679 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.695 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.695 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.707 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.707 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.711 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.711 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.721 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.721 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.727 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.727 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.743 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.743 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.756 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.756 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.759 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.759 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.769 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.769 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.775 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.775 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.783 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.783 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.791 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.791 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.797 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.798 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.804 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.804 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.806 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.806 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.819 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.819 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.823 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.823 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.860 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.860 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.867 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.867 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.871 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.871 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.881 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.881 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.887 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.887 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.903 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.903 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.914 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.914 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.918 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.918 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.928 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.928 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.934 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.934 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.942 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.942 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.950 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.950 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.956 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.956 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.964 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.964 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.966 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.966 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.977 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.978 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.983 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.983 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.991 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.991 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:31.999 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:31.999 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.005 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.006 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.012 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.012 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.014 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.014 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.026 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.026 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.031 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.031 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.040 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.040 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.047 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.047 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.054 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.054 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.061 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.061 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.063 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.063 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.075 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.075 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.079 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.079 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.089 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.089 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.095 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.095 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.103 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.103 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.110 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.110 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.110 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.110 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.123 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.123 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.126 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.126 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.138 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.138 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.142 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.142 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.151 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.151 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.157 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.157 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.165 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.165 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.172 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.172 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.174 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.174 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.185 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.185 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.190 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.190 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.200 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.200 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.206 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.206 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.214 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.214 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.221 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.221 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.223 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.223 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.234 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.235 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.239 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.239 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.248 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.248 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.255 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.255 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.262 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.263 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.269 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.269 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.271 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.271 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.287 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.287 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.297 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.297 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.302 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.302 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.311 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.311 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.317 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.317 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.318 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.318 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.331 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.331 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.334 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.334 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.345 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.345 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.350 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.350 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.359 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.359 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.366 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.366 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.373 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.373 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.381 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.381 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.382 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.382 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.394 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.394 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.399 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.399 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.409 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.409 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.415 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.415 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.422 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.422 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.429 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.429 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.431 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.431 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.443 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.443 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.447 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.447 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.457 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.457 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.463 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.463 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.471 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.471 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.478 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.478 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.479 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.479 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.495 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.495 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.510 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.510 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.526 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.526 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.532 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.533 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.539 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.540 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.542 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.542 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.555 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.555 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.558 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.558 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.567 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.567 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.574 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.574 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.582 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.582 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.588 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.588 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.590 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.590 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.602 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.606 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.610 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.616 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.616 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.623 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.624 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.630 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.630 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.637 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.637 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.639 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.639 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.651 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.651 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.655 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.655 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.666 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.666 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.671 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.671 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.686 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.686 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.700 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.700 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.702 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.702 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.714 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.714 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.718 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.718 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.727 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/EvilPuff1.png
+14:16:32.727 [JavaFX Application Thread] DEBUG AssetLoader          - Loading from cache: /assets/textures/PokePlayerUnit1.png
+14:16:32.728 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:32.732 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from GameScene and adding to PokeBounceGameMenu
+14:16:32.732 [JavaFX Application Thread] DEBUG MainWindow           - GameScene -> PokeBounceGameMenu
+14:16:33.334 [JavaFX Application Thread] DEBUG MainWindow           - Push state: DialogSubState
+14:16:33.334 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:33.338 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from PokeBounceGameMenu and adding to DialogSubState
+14:16:33.338 [JavaFX Application Thread] DEBUG MainWindow           - PokeBounceGameMenu -> DialogSubState
+14:16:33.824 [JavaFX Application Thread] DEBUG MainWindow           - Pop state: DialogSubState
+14:16:33.824 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:33.824 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from DialogSubState and adding to PokeBounceGameMenu
+14:16:33.824 [JavaFX Application Thread] DEBUG MainWindow           - PokeBounceGameMenu <- DialogSubState
+14:16:33.824 [JavaFX Application Thread] DEBUG Input                - Clearing active input actions
+14:16:33.827 [JavaFX Application Thread] DEBUG Engine               - Removing overlay from PokeBounceGameMenu and adding to PokeBounceMainMenu
+14:16:33.827 [JavaFX Application Thread] DEBUG MainWindow           - PokeBounceGameMenu -> PokeBounceMainMenu
+14:16:33.827 [JavaFX Application Thread] DEBUG AudioPlayer          - Stopping music com.almasb.fxgl.audio.Music@1692128f
+14:16:33.890 [JavaFX Application Thread] DEBUG AudioPlayer          - Playing music com.almasb.fxgl.audio.Music@2f28255a
+14:16:41.132 [JavaFX Application Thread] DEBUG Engine               - Exiting FXGL
+14:16:41.132 [JavaFX Application Thread] DEBUG Engine               - Shutting down background threads
+14:16:41.132 [JavaFX Application Thread] DEBUG Engine               - Saving FXGL system data
+14:16:41.134 [JavaFX Application Thread] DEBUG FSServiceImpl        - Writing to: E:\Spil projekt - Jan 2020\Demo1\system\fxgl.bundle
+14:16:41.135 [JavaFX Application Thread] DEBUG Engine               - Closing logger and exiting JavaFX

@@ -30,6 +30,7 @@ public class PokeBounceGameMenu extends FXGLMenu {
             if (yes) {
                 FXGL.getGameController().gotoMainMenu();
                 FXGL.getAudioPlayer().stopMusic(BasicGameApp.music);
+                FXGL.getAudioPlayer().playMusic(BasicGameApp.menuMusic);
             }
         });
 
