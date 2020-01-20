@@ -564,7 +564,8 @@ public class BasicGameApp extends GameApplication {
     public void saveToFile(int totalScore) {
 
         try {
-            File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+            //File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //LAPTOP.
+            File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //STATION.
             if (file.exists()) {
                 if (PokeBounceMainMenu.getHighScoreMap().containsKey(playerName)) {
                     if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
