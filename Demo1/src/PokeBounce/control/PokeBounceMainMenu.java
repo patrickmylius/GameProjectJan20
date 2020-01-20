@@ -23,6 +23,7 @@ import javafx.stage.StageStyle;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.*;
 
@@ -103,8 +104,24 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             position++;
             vBox.getChildren().addAll(borderPane);
-            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; " +
-                    "-fx-background-color: rgba(0,300,100, 0.5)"); // SETS TEXT SIZE; style and weight and BACKGROND
+            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; ");
+
+            //Create an input stream
+            FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif");
+
+            //Create an image
+            Image img = new Image(fileInput);
+
+            //Create a background image
+
+            BackgroundImage highscoreImage = new BackgroundImage(img,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.CENTER,
+                    BackgroundSize.DEFAULT);
+
+            Background background = new Background(highscoreImage);
+            vBox.setBackground(background);
         }
         Stage stage = new Stage();
         stage.setTitle("Highscores");
