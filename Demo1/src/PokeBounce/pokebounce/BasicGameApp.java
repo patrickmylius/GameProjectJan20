@@ -112,6 +112,11 @@ public class BasicGameApp extends GameApplication {
         playerLives = 3;
         safeRespawn = false;
         hasPowerUp = false;
+        leftWallTouched = false;
+        rightWallTouched = false;
+        topWallTouched = false;
+        bottomWallTouched = false;
+
 
         /**FOR STATION 57600x1080 pixels*/
         /** Spawns new EvilPuff every 6 seconds */
