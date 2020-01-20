@@ -1,31 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2be47ce5-b85b-4446-8b42-8133f7047890" name="Default Changelist" comment="Fixed EvilPuff spawn sound, to be exact">
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.56.49.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.57.18.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.58.22.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.58.43.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.59.09.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.59.52.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-10.00.09.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-10.01.52.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-10.02.04.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-10.02.40.log" afterDir="false" />
+    <list default="true" id="2be47ce5-b85b-4446-8b42-8133f7047890" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-10.16.14.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-13.54.22.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-14.02.34.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-14.15.45.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-14.16.41.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.40.00.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.40.17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.40.29.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.41.40.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.43.38.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.44.30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.46.06.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.50.10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.51.30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/control/PokeBounceMainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.57.18.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.58.22.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.58.43.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.59.09.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-20-jan.-2020-09.59.52.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/BasicGameApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/BasicGameApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/sounds/PowerUpSpawn.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/sounds/PowerUpSpawn.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/sounds/Respawn.wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/sounds/Respawn.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PokeBounce/pokebounce/PowerUpHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokeBounce/pokebounce/PowerUpHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +115,7 @@
       <workItem from="1579415009333" duration="4883000" />
       <workItem from="1579442924842" duration="14766000" />
       <workItem from="1579467438315" duration="395000" />
-      <workItem from="1579496787033" duration="14746000" />
+      <workItem from="1579496787033" duration="17124000" />
     </task>
     <task id="LOCAL-00001" summary="Changing sound levels">
       <created>1579248225122</created>
@@ -267,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579510449982</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updates MINOR TODOES.&#10;&#10;Made spawn Entry sounds, work accurate.">
+      <created>1579511577307</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1579511577307</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Outlined new File file, so path works either on laptop or station.">
+      <created>1579511681660</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1579511681660</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +297,9 @@
     <MESSAGE value="Changed font -fx-text-fill: in Highscores." />
     <MESSAGE value="Removed -fx-font-size from vBox.SetStyle." />
     <MESSAGE value="Fixed EvilPuff spawn sound, to be exact" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed EvilPuff spawn sound, to be exact" />
+    <MESSAGE value="Updates MINOR TODOES.&#10;&#10;Made spawn Entry sounds, work accurate." />
+    <MESSAGE value="Outlined new File file, so path works either on laptop or station." />
+    <option name="LAST_COMMIT_MESSAGE" value="Outlined new File file, so path works either on laptop or station." />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579245068721">
@@ -313,10 +319,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="304" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579245065368" />
-    <state x="902" y="36" key="CommitChangelistDialog2" timestamp="1579511576341">
+    <state x="902" y="36" key="CommitChangelistDialog2" timestamp="1579511680754">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="902" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511576341" />
+    <state x="902" y="36" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511680754" />
     <state x="591" y="193" key="FileChooserDialogImpl" timestamp="1579245035395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -326,25 +332,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="601" y="288" width="358" height="247" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1578317744112" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579511588022">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1579526189179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511588022" />
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579526189179" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579511588021">
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1579526189179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511588021" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579526189179" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579511588021">
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1579526189179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511588021" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579526189179" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578560604580" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579511588022">
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1579526189179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511588022" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579526189179" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578560604581" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1579505445273">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -371,10 +377,10 @@
     </state>
     <state x="311" y="0" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579245038390" />
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578302874389" />
-    <state x="625" y="269" key="Vcs.Push.Dialog.v2" timestamp="1579511578374">
+    <state x="625" y="269" key="Vcs.Push.Dialog.v2" timestamp="1579511682947">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="625" y="269" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511578374" />
+    <state x="625" y="269" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1579511682947" />
     <state x="581" y="298" key="com.intellij.ide.util.TipDialog" timestamp="1579496787693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

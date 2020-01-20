@@ -28,20 +28,33 @@ import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 /***/
-//TODO ::::: REMEMBER PIXEL MOVEMENT CHANGE, WHEN SWAPPING FROM STATION TO LAPTOP.
+//TODO ::::: REMEMBER PIXEL MOVEMENT CHANGE, WHEN SWAPPING FROM STATION TO LAPTOP :::::
 
 /**
  * MAJOR TODOS
  */
 //TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
+//TODO - Fix SaveToFile, same name logged, adds score + score and logs the total to highScore
+//if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
+//                        System.out.println("Old high score not beaten, score not saved");
 
 /**
  * MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH.....
  */
-//TODO - Design new player, design new Enemy.
 //TODO - Design new game map
 //TODO - FIX Stroke / Outline on HighScore labels
-//TODO - CHANGE GAME THEME MUSIC
+
+    //TODO - @@@@ALPHATEST@@@@@
+
+    //TODO - Change game theme music, theme imageBackground, player design, enemy design.
+    //TODO - EvilPuff slow buff, turn down ENEMY pixel movement to 50% for x amount of time
+    //TODO - APPLICATION increase pixel size
+    //TODO - Countdown shown, on buffs and respawn
+    //TODO - Power buff, overwrites respawn
+    //TODO - Game diffs, easy, normal, hard
+
+
+
 
 
 public class BasicGameApp extends GameApplication {
