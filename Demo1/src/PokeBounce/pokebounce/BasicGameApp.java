@@ -27,19 +27,19 @@ import java.io.*;
 import java.util.Map;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
-
+/***/
 //TODO ::::: REMEMBER PIXEL MOVEMENT CHANGE, WHEN SWAPPING FROM STATION TO LAPTOP.
 
 /**
  * MAJOR TODOS
  */
-//TODO - IMPLEMENT HIGH SCORE LOGS(DONE) - IMPLEMENT HIGHSCORE LOG SHOWN IN MENUS AND IMPLEMENT PLAYER NAME ON GAME OVER.
 //TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
 
 /**
- * MINOR TODOES
+ * MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH.....
  */
-//TODO - Change player and enemy avatar... mby game Gif
+//TODO - Design new player, design new Enemy.
+    //TODO - Design new game map
 
 
 public class BasicGameApp extends GameApplication {
@@ -115,11 +115,11 @@ public class BasicGameApp extends GameApplication {
 
         /**FOR STATION 57600x1080 pixels*/
         /** Spawns new EvilPuff every 6 seconds */
-        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+        evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 10) + (1),
                 getAppWidth() / -(Math.random() * 200) + (1));
         TimerAction timerAction = getGameTimer().runAtInterval(() ->
         {
-            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 50) + (1),
+            evilPuff = getGameWorld().spawn("EvilPuff", getAppHeight() / (Math.random() * 10) + (1),
                     getAppWidth() / (Math.random() * 200) + (1));
             getAudioPlayer().playSound(evilPuffEntrySound);
         }, Duration.seconds(6));
@@ -138,23 +138,19 @@ public class BasicGameApp extends GameApplication {
 
 
         /** Spawns new coin every 8 second*/
-        coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
-                getAppWidth() / -(Math.random() * 600) + (1));
         TimerAction timerAction1 = getGameTimer().runAtInterval(() -> {
 
-            coin = getGameWorld().spawn("Coin", getAppHeight() / (Math.random() * 600) + (1),
-                    getAppWidth() / -(Math.random() * 600) + (1));
+            coin = getGameWorld().spawn("Coin");
             FXGL.getAudioPlayer().playSound(coinEntrySound);
         }, Duration.seconds(8));
         timerAction1.resume();
 
-        /** Spawns powerup every 45 second */
+        /** Spawns powerup every 35 second */
         TimerAction timerAction2 = getGameTimer().runAtInterval(() -> {
 
-            powerUp = getGameWorld().spawn("PowerUp", getAppHeight() / (Math.random() * 300) + (1),
-                    getAppWidth() / -(Math.random() * 300) + (1));
+            powerUp = getGameWorld().spawn("PowerUp");
             FXGL.getAudioPlayer().playSound(powerUpEntrySound);
-        }, Duration.seconds(40));
+        }, Duration.seconds(35));
         timerAction2.resume();
 
 
@@ -390,7 +386,7 @@ public class BasicGameApp extends GameApplication {
             });
 
 
-/** When player is game over, log saves score to "totalScore.txt" */
+/** When player is game over, log saves score to "totalScore.txt", first logging method used */
             //String logmessage = "\nPlayer unknown: your score ended as: ";
             //System.out.println(logmessage + totalScore);
             //log = log + logmessage + totalScore + "\n************************************";
@@ -398,7 +394,7 @@ public class BasicGameApp extends GameApplication {
 
 
 
-        /** if player is Game Over, resets playerLives, and takes him to main menu */
+        /** if player is Game Over, resets playerLives, and takes him to main menu, first GameOver Method */
         //if (playerLives == 0) {
         //  getGameController().gotoMainMenu();
         // playerLives++;
@@ -589,6 +585,8 @@ public class BasicGameApp extends GameApplication {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        /** First saveToFileMethod*/
 
         //try {
         // File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); /** FOR STATION */

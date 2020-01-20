@@ -1,6 +1,7 @@
 package PokeBounce.pokebounce;
 
 import PokeBounce.EntityType;
+import com.almasb.fxgl.dsl.components.KeepOnScreenComponent;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.EntityFactory;
 import com.almasb.fxgl.entity.SpawnData;
@@ -37,10 +38,10 @@ public class BasicGameFactory implements EntityFactory {
                 .from(data)
                 .viewWithBBox("EvilPuff1.png")
                 .with(new CollidableComponent(true))
-                /**For Laptop 1920x1080*/
-                //with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
-                /**For Station 5760x1080*/
-                .with("velocity", new Point2D((Math.random() * 1) + 2, (Math.random() * 1) + 2))
+                /**Sets speed on ENEMY For Laptop 1920x1080*/
+                //.with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
+                /**Sets speed on ENEMY For Station 5760x1080*/
+                .with("velocity", new Point2D((Math.random() * 1) + 1.50, (Math.random() * 1) + 1.50))
                 .with(new EvilPuffComponent())
                 .build();
 
@@ -53,10 +54,10 @@ public class BasicGameFactory implements EntityFactory {
 
                 .from(data)
                 .type(EntityType.COIN)
-                .at(getAppHeight() / (Math.random() * 10) + (1),
-                        getAppWidth() / (Math.random() * 10) + (1))
+                .at((Math.random() * 600) + (1),
+                        (Math.random() * 600) + (1))
                 .viewWithBBox("Coin.png")
-                .with(new CollidableComponent(true))
+                .with(new CollidableComponent(true), new KeepOnScreenComponent().bothAxes())
                 .build();
     }
 
@@ -68,10 +69,10 @@ public class BasicGameFactory implements EntityFactory {
 
                 .from(data)
                 .type(EntityType.POWERUP)
-                .at(getAppHeight() / (Math.random() * 30) + (1),
-                        getAppWidth() / (Math.random() * 30 ) + (1))
+                .at( (Math.random() * 600) + (1),
+                        (Math.random() * 600) + (1))
                 .viewWithBBox("PowerUp.png")
-                .with(new CollidableComponent(true))
+                .with(new CollidableComponent(true), new KeepOnScreenComponent().bothAxes())
                 .build();
 
     }
