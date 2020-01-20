@@ -109,7 +109,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             position++;
             vBox.getChildren().addAll(borderPane);
-            vBox.setStyle("-fx-text-fill: black;-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; ");
+            vBox.setStyle("-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; ");
 
             //Create an input stream
             FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif");
