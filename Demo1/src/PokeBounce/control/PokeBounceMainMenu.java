@@ -101,11 +101,11 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             Text text1 = new Text("  " + position + ". " + entry.getKey());
             borderPane.setLeft(text1);
-            text1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)¨; -fx-stroke: gray");
+            text1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: rgba(198,163, 57, 1.0)");
 
             Text text2 = new Text(entry.getValue() + "  ");
             borderPane.setRight(text2);
-            text2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: gray");
+            text2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: rgba(198,163, 57, 1.0)");
 
 
             position++;
@@ -113,7 +113,8 @@ public class PokeBounceMainMenu extends FXGLMenu {
             vBox.setStyle("-fx-font-size: 20; -fx-font-style: italic; -fx-font-weight: bold; -fx-padding: 0 0 20 0; ");
 
             //Create an input stream
-            FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif");
+            //FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif"); //FOR STATION
+            FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/HighScore75Pix.gif"); //FOR LAPTOP
 
             //Create an image
             Image img = new Image(fileInput);
@@ -141,7 +142,8 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
     }
     public static LinkedHashMap<String, Integer> getHighScoreMap() throws FileNotFoundException {
-        File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt");
+        File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //FOR LAPTOP
+        //File file = new File("/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //FOR STATION
 
         ArrayList<String> players = new ArrayList<>();
         ArrayList<Integer> scores = new ArrayList<>();

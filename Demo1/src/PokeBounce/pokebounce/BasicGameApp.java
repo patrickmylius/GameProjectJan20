@@ -345,8 +345,8 @@ public class BasicGameApp extends GameApplication {
                 if (rightWallTouched) //If player unit collides with right wall,"Move Right" function stops until false.
                     return;
 
-                player.translateX(3); //Move right, 3 pixels, for 5760x1080
-                //player.translateX(6); //Move right 6 pixels for 1920x1080
+                //player.translateX(3); //Move right, 3 pixels, for 5760x1080
+                player.translateX(5); //Move right 5 pixels for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved right
             }
         }, KeyCode.D);
@@ -357,8 +357,8 @@ public class BasicGameApp extends GameApplication {
                 if (leftWallTouched) //If player unit collides with left wall,"Move Left" function stops until false.
                     return;
 
-                player.translateX(-3); //move left -3 pixels. for 5760x1080
-                //player.translateX(-6); //move left -6 pixels, for 1920x1080
+                //player.translateX(-3); //move left -3 pixels. for 5760x1080
+                player.translateX(-5); //move left -5 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved left
             }
         }, KeyCode.A);
@@ -369,8 +369,8 @@ public class BasicGameApp extends GameApplication {
                 if (topWallTouched) //If player unit collides with top wall,"Move Up" function stops until false.
                     return;
 
-                player.translateY(-3); //move -3 pixels up, for 5760x1080
-                //player.translateY(-6); //move up -6 pixels, for 1920x1080
+                //player.translateY(-3); //move -3 pixels up, for 5760x1080
+                player.translateY(-5); //move up -5 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); tracks pixels moved up
             }
         }, KeyCode.W);
@@ -381,8 +381,8 @@ public class BasicGameApp extends GameApplication {
                 if (bottomWallTouched) //If player unit collides with bottom wall,"Move Down" function stops until false.
                     return;
 
-                player.translateY(3); //move 3 pixels down, for 5760x1080
-                //player.translateY(6); //move down 6 pixels, for 1920x1080
+                //player.translateY(3); //move 3 pixels down, for 5760x1080
+                player.translateY(5); //move down 5 pixels, for 1920x1080
                 //getGameState().increment("pixelsMoved", +3); Tracks pixels moved down
             }
         }, KeyCode.S);
@@ -578,8 +578,8 @@ public class BasicGameApp extends GameApplication {
     public void saveToFile(int totalScore) {
 
         try {
-            //File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //LAPTOP.
-            File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //STATION.
+            File file = new File("Demo1/src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //LAPTOP.
+            //File file = new File("src/PokeBounce/pokebounce/HighScoreLog/TotalScore.txt"); //STATION.
             if (file.exists()) {
                 if (PokeBounceMainMenu.getHighScoreMap().containsKey(playerName)) {
                     if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {

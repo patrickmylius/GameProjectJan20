@@ -39,9 +39,9 @@ public class BasicGameFactory implements EntityFactory {
                 .viewWithBBox("EvilPuff1.png")
                 .with(new CollidableComponent(true))
                 /**Sets speed on ENEMY For Laptop 1920x1080*/
-                //.with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
+                .with("velocity", new Point2D((Math.random() * 1) + 3, (Math.random() * 1) + 3))
                 /**Sets speed on ENEMY For Station 5760x1080*/
-                .with("velocity", new Point2D((Math.random() * 1) + 1.50, (Math.random() * 1) + 1.50))
+                //.with("velocity", new Point2D((Math.random() * 1) + 1.50, (Math.random() * 1) + 1.50))
                 .with(new EvilPuffComponent())
                 .build();
 
