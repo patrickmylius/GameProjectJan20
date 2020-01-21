@@ -35,6 +35,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  */
 //TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
 //TODO - Fix SaveToFile, same name logged, adds score + score and logs the total to highScore
+//TODO - HighScores backGround Design
 //if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
 //                        System.out.println("Old high score not beaten, score not saved");
 
