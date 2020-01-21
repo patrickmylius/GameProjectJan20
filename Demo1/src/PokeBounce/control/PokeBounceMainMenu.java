@@ -99,13 +99,13 @@ public class PokeBounceMainMenu extends FXGLMenu {
             BorderPane borderPane = new BorderPane();
 
 
-            Label label1 = new Label("  " + position + ". " + entry.getKey());
-            borderPane.setLeft(label1);
-            label1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)");
+            Text text1 = new Text("  " + position + ". " + entry.getKey());
+            borderPane.setLeft(text1);
+            text1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)¨; -fx-stroke: gray");
 
-            Label label2 = new Label(entry.getValue() + "  ");
-            borderPane.setRight(label2);
-            label2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0)");
+            Text text2 = new Text(entry.getValue() + "  ");
+            borderPane.setRight(text2);
+            text2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: gray");
 
 
             position++;
