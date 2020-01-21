@@ -101,11 +101,11 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             Text text1 = new Text("  " + position + ". " + entry.getKey());
             borderPane.setLeft(text1);
-            text1.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: rgba(198,163, 57, 1.0)");
+            text1.setStyle("-fx-fill: black; -fx-stroke: rgba(198,163, 57, 1.0)");
 
             Text text2 = new Text(entry.getValue() + "  ");
             borderPane.setRight(text2);
-            text2.setStyle("-fx-text-fill: rgba(198,163, 57, 1.0); -fx-stroke: rgba(198,163, 57, 1.0)");
+            text2.setStyle("-fx-fill: black; -fx-stroke: rgba(198,163, 57, 1.0)");
 
 
             position++;
@@ -130,12 +130,15 @@ public class PokeBounceMainMenu extends FXGLMenu {
             Background background = new Background(highscoreImage);
             vBox.setBackground(background);
         }
+        Image icon = new Image(getClass().getResourceAsStream("GameMenuEvilPuff.png")); //Creates Icon image
+
         Stage stage = new Stage();
         stage.setTitle("Highscores");
         stage.setWidth(600);
         stage.setHeight(600);
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
+        stage.getIcons().add(icon); //Adds icon to stage Icon
         Scene scene = new Scene(vBox);
         stage.setScene(scene);
         stage.show();
