@@ -41,7 +41,6 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH.....
  */
 //TODO - Design new game map
-//TODO - FIX Stroke / Outline on HighScore labels
 
     //TODO - @@@@ALPHATEST@@@@@
 
