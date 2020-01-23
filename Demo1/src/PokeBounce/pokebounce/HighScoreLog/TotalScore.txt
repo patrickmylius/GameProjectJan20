@@ -9,3 +9,5 @@ Player Morten: your score ended as: 7500
 ************************************
 Player Morten: your score ended as: 10750
 ************************************
+Player Simon: your score ended as: 6000
+************************************

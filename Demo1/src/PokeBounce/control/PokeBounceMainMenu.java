@@ -114,7 +114,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
 
             //Create an input stream
             //FileInputStream fileInput = new FileInputStream("src/assets/textures/MainMenuGif.gif"); //FOR STATION
-            FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/HighScore75Pix.gif"); //FOR LAPTOP
+            FileInputStream fileInput = new FileInputStream("Demo1/src/assets/textures/HighScore50Pix.gif"); //FOR LAPTOP
 
             //Create an image
             Image img = new Image(fileInput);

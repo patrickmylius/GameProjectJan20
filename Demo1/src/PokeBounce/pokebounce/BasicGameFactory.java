@@ -71,7 +71,7 @@ public class BasicGameFactory implements EntityFactory {
                 .type(EntityType.POWERUP)
                 .at( (Math.random() * 600) + (1),
                         (Math.random() * 600) + (1))
-                .viewWithBBox("PowerUp.png")
+                .viewWithBBox("PowerUp.gif")
                 .with(new CollidableComponent(true), new KeepOnScreenComponent().bothAxes())
                 .build();
 
