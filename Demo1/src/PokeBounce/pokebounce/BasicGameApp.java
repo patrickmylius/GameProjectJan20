@@ -34,6 +34,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
  * MAJOR TODOS
  */
 //TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
+//TODO - FIX BUG, WITH STACKING SCORES, IF player cancels instead of saving Highscore and does not close the application , it adds last saved score to new score.
 //if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
 //                        System.out.println("Old high score not beaten, score not saved");
 

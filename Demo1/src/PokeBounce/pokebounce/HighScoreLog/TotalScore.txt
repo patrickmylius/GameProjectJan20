@@ -11,3 +11,13 @@ Player Morten: your score ended as: 10750
 ************************************
 Player Simon: your score ended as: 6000
 ************************************
+Player Kaare: your score ended as: 5500
+************************************
+Player LeBoss: your score ended as: 13750
+************************************
+Player Hardon: your score ended as: 19500
+************************************
+Player Matilde: your score ended as: 25750
+************************************
+Player Freja: your score ended as: 500
+************************************
