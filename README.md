@@ -7,7 +7,7 @@
 
 ## GAME PLAY
 
-Avoid the wall bouncing Evil puffs by moving player around, new enemy will enter the game every 6 second.**
+Avoid the wall bouncing Evil puffs by moving player around, new enemy will enter the game every 6 second.
 
 Achieve higher score, by picking up gold coins,
 each gold coin is set to spawn every 8 second at a random posistion.
