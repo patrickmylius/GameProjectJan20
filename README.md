@@ -1,16 +1,19 @@
 # POKEBOUNCE
 >**100 Hour Game project - Zealand - Næstved - by Patrick Grønvold**
+
 >**Project made in IntelliJ, with Java FXGL Libriaries and Uber-jar, by Almas Baimagambetov **
 
 
 
 ## GAME PLAY
 
->***Player avatar: Pokeball with sunglasses.***
+***Player avatar: Pokeball with sunglasses.***
+>Player starts game with 3 lifes, every time player collides with an Evil puff, player will be eaten and 1 life will be lost.
+>When player has no lifes left, the game is over and player will be asked to enter a wanted name, for the Scoreboard / Highscore list.
 
 >***Enemy avatar: Evil Puffs.***
 
-Avoid the wall bouncing enemies (Evil puffs) by moving player around, new enemy will enter the game every 6 second.**
+Avoid the wall bouncing Evil puffs by moving player around, new enemy will enter the game every 6 second.**
 
 Achieve higher score, by picking up gold coins,
 each gold coin grants 250 points and is set to spawn every 8 second at random posistion.
