@@ -21,3 +21,7 @@ Player Matilde: your score ended as: 25750
 ************************************
 Player Freja: your score ended as: 500
 ************************************
+Player Benja: your score ended as: 6250
+************************************
+Player Kelvin: your score ended as: 250
+************************************

@@ -33,7 +33,6 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 /**
  * MAJOR TODOS
  */
-//TODO - FIX BUG, WITH STACKING SCORES, IF player cancels instead of saving Highscore and does not close the application , it adds last saved score to new score.
 
 
 /**
@@ -171,7 +170,7 @@ public class BasicGameApp extends GameApplication {
 
             powerUp = getGameWorld().spawn("PowerUp");
             FXGL.getAudioPlayer().playSound(powerUpEntrySound);
-        }, Duration.seconds(35));
+        }, Duration.seconds(32));
         timerAction2.resume();
 
 
@@ -398,6 +397,8 @@ public class BasicGameApp extends GameApplication {
                 setPlayerName(String);
                 if (String.isEmpty()) {
                     System.out.println("Score not saved.");
+                    totalScore = 0;
+
                 } else {
                     String playerLog = "\nPlayer " + playerName + ": your score ended as: ";
                     System.out.println(log + totalScore);
