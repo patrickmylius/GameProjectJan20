@@ -1,11 +1,11 @@
 **100 Hour Game project - Zealand - Næstved - Patrick Grønvold**
 
-#############################################
-############# GAME - POKEBOUNCE #############
-#############################################
+
+# GAME - POKEBOUNCE 
 
 
-################# GAME PLAY #################
+
+## GAME PLAY
 
 
 
