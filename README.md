@@ -1,7 +1,7 @@
 # POKEBOUNCE
 >**100 Hour Game project - Zealand - Næstved - by Patrick Grønvold**
 
->**Project made in IntelliJ, with Java FXGL Libriaries and Uber-jar, by Almas Baimagambetov 
+>**Project made in IntelliJ, with Java FXGL Libriaries and Uber-jar, by Almas Baimagambetov** 
 
 
 
@@ -29,6 +29,7 @@ many Evil puffs as possible, to avoid being overrun.
 
 ### SCORE SYSTEM 
 >*Picking up gold coins : + 250 POINTS*
+
 >*Eating Evil Puffs while Powered up: + 500 POINTS*
 
 ## CONTROLS
