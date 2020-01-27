@@ -6,9 +6,9 @@
 
 ## GAME PLAY
 
-***Player avatar: Pokeball with sunglasses.***
+>***Player avatar: Pokeball with sunglasses.***
 
-***Enemy avatar: Evil Puffs.***
+>***Enemy avatar: Evil Puffs.***
 
 Avoid the wall bouncing enemies (Evil puffs) by moving player around, new enemy will enter the game every 6 second.**
 
