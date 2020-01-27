@@ -21,7 +21,7 @@ public class PowerUpHandler extends CollisionHandler {
             FXGL.<BasicGameApp>getAppCast().playerPowerOff();
             /** Sets duration of the player PoweredUp buff */
        // }, Duration.seconds(14)); //FOR STATION
-    }, Duration.seconds(8));//FOR LAPTOP
+    }, Duration.seconds(6));//FOR LAPTOP
     }
 
 }

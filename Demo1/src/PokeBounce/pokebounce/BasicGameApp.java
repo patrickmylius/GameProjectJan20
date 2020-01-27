@@ -33,15 +33,14 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 /**
  * MAJOR TODOS
  */
-//TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE
 //TODO - FIX BUG, WITH STACKING SCORES, IF player cancels instead of saving Highscore and does not close the application , it adds last saved score to new score.
-//if (PokeBounceMainMenu.getHighScoreMap().get(playerName) > totalScore) {
-//                        System.out.println("Old high score not beaten, score not saved");
+
 
 /**
  * MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH.....
  */
 //TODO - Design new game map
+//TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE..
 
     //TODO - @@@@ALPHATEST@@@@@
 
@@ -51,6 +50,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
     //TODO - Countdown shown, on buffs and respawn
     //TODO - Power buff, overwrites respawn
     //TODO - Game diffs, easy, normal, hard
+    //TODO - Implement different difficuties, easy, normal, hard.
 
 
 

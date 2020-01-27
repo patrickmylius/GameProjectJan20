@@ -166,6 +166,7 @@ public class PokeBounceMainMenu extends FXGLMenu {
             }
         }
 
+
         for (int i = 0; i < players.size(); i++) {
             list.put(players.get(i), scores.get(i));
         }
