@@ -1,7 +1,7 @@
 # POKEBOUNCE
 >**100 Hour Game project - Zealand - Næstved - by Patrick Grønvold**
 
->**Project made in IntelliJ, with Java FXGL Libriaries and Uber-jar, by Almas Baimagambetov **
+>**Project made in IntelliJ, with Java FXGL Libriaries and Uber-jar, by Almas Baimagambetov 
 
 
 
@@ -26,6 +26,14 @@ many Evil puffs as possible, to avoid being overrun.
 
 ***Enemy avatar: Evil Puffs.***
 >Hungry Evil puffs are trying to take over the sky and will eat anything in their way.
+
+## CONTROLS
+
+-**MOVE UP** : Key - W
+-**MOVE DOWN** : Key - S
+-**MOVE LEFT** : Key - A
+-**MOVE RIGHT** : Key - D
+>
 
 
 
