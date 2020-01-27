@@ -66,7 +66,7 @@ public class BasicGameApp extends GameApplication {
         gameSettings.setHeight(600);
         gameSettings.setTitle("PokeBounce - Zealand");
         gameSettings.setAppIcon("EvilPuffIcon.png");
-        gameSettings.setVersion("0.1");
+        gameSettings.setVersion("1.0");
         gameSettings.setMenuEnabled(true);
 
 

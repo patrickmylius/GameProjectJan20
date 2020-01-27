@@ -7,17 +7,20 @@ import com.almasb.fxgl.dsl.FXGL;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.geometry.Insets;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -136,7 +139,15 @@ public class PokeBounceMainMenu extends FXGLMenu {
         stage.setTitle("Highscores");
         stage.setWidth(600);
         stage.setHeight(600);
+        Rectangle2D screen1080 = new Rectangle2D(0, 0, 1920, 1080);
+        Rectangle2D screen5760 = new Rectangle2D(0, 0, 5760, 1080);
+        stage.setY(100);
+        stage.setX(470);
         stage.setResizable(false);
+        stage.addEventHandler(MouseEvent.MOUSE_CLICKED, (mouseEvent -> {
+            stage.close();
+        }));
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.getIcons().add(icon); //Adds icon to stage Icon
         Scene scene = new Scene(vBox);
