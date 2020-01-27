@@ -63,10 +63,10 @@ many Evil puffs as possible, to avoid being overrun.
 
 **MINOR TODOES - FOR THE TIME AFTER PROJECT MONTH..**
 
-@TODO - Design new game map
-@TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE..
+1. TODO - Design new game map
+ - TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE..
 
-    1. @TODO - @@@@ALPHATEST@@@@@
+    2. @TODO - @@@@ALPHATEST@@@@@
 
     - TODO - Change game theme music, theme imageBackground, player design, enemy design.
     - TODO - EvilPuff slow buff, turn down ENEMY pixel movement to 50% for x amount of time
