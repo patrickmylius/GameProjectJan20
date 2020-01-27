@@ -29,10 +29,13 @@ many Evil puffs as possible, to avoid being overrun.
 
 ## CONTROLS
 
--**MOVE UP** : Key - W
--**MOVE DOWN** : Key - S
--**MOVE LEFT** : Key - A
--**MOVE RIGHT** : Key - D
+**-MOVE UP** : Key - W
+
+**-MOVE DOWN** : Key - S
+
+**-MOVE LEFT** : Key - A
+
+**-MOVE RIGHT** : Key - D
 >
 
 
