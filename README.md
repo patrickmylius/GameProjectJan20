@@ -64,7 +64,7 @@ many Evil puffs as possible, to avoid being overrun.
 
  
 
-    2. @@@@ALPHATEST - DEVELOPMENT PLANNING@@@@@
+    1. @@@@ALPHATEST - DEVELOPMENT PLANNING@@@@@
     
     - TODO - Design new game map
     - TODO - REFRACTER TO NEW PROGRAM FILE, CREATE ACCEPTABLE STRUCTURE..
