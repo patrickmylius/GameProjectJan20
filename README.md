@@ -21,11 +21,11 @@ many Evil puffs as possible, to avoid being overrun.
 
 ### AVATARS
 
-**Player avatar: Pokeball with sunglasses.**
+**Player avatar: Mr. PokeCool.**
 >Player starts game with 3 lifes, every time player collides with an Evil puff, player will be eaten and 1 life will be lost.
 >When all player lifes are lost, the game is over and player will be asked to enter a wanted name, for the Scoreboard / Highscore list.
 
-**Enemy avatar: Evil Puffs.**
+**Enemy avatar: Dr. Evil Puff.**
 >Hungry Evil puffs are trying to take over the sky and will eat anything in their way.
 
 
@@ -49,7 +49,17 @@ many Evil puffs as possible, to avoid being overrun.
 - DOWN RIGHT  : S + D
 
 **GAME MENU**
-- Go to game menu : Esc
+1. Go to game menu / Pause game : Esc
+- Continue Game
+- Restart Game
+- Main Menu
+
+**MAIN MENU**
+1. Main Menu : When application is run.
+- Start new game
+- View Highscores
+- Exit game
+
 
 
 
