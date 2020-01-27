@@ -9,9 +9,10 @@
 
 ***Player avatar: Pokeball with sunglasses.***
 >Player starts game with 3 lifes, every time player collides with an Evil puff, player will be eaten and 1 life will be lost.
->When player has no lifes left, the game is over and player will be asked to enter a wanted name, for the Scoreboard / Highscore list.
+>When all player lifes are lost, the game is over and player will be asked to enter a wanted name, for the Scoreboard / Highscore list.
 
->***Enemy avatar: Evil Puffs.***
+***Enemy avatar: Evil Puffs.***
+>Hungry Evil puffs are trying to take over the sky and will eat anything in their way.
 
 Avoid the wall bouncing Evil puffs by moving player around, new enemy will enter the game every 6 second.**
 
