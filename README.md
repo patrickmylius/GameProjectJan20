@@ -19,11 +19,6 @@ many Evil puffs as possible, to avoid being overrun.
 
 > BUT WATCH OUT, AS SOON AS THE POWER UP IS GONE, YOU'LL MIGHT BE SNACKED..
 
-### SCORE SYSTEM ###
->*Picking up gold coins : + 250 POINTS*
->*Eating Evil Puffs while Powered up: + 500 POINTS*
-
-
 
 ***Player avatar: Pokeball with sunglasses.***
 >Player starts game with 3 lifes, every time player collides with an Evil puff, player will be eaten and 1 life will be lost.
@@ -31,6 +26,10 @@ many Evil puffs as possible, to avoid being overrun.
 
 ***Enemy avatar: Evil Puffs.***
 >Hungry Evil puffs are trying to take over the sky and will eat anything in their way.
+
+### SCORE SYSTEM 
+>*Picking up gold coins : + 250 POINTS*
+>*Eating Evil Puffs while Powered up: + 500 POINTS*
 
 ## CONTROLS
 
