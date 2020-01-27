@@ -41,8 +41,8 @@ many Evil puffs as possible, to avoid being overrun.
 - DOWN LEFT   : A + S
 - DOWN RIGHT  : S + D
 
-**PAUSE MENU**
-- Esc
+**GAME MENU**
+- Go to game menu : Esc
 
 
 
