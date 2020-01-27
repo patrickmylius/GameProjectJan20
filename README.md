@@ -1,11 +1,11 @@
 **100 Hour Game project - Zealand - Næstved - Patrick Grønvold**
 
 
-# *POKEBOUNCE*
+# POKEBOUNCE
 
 
 
-## >GAME PLAY
+## GAME PLAY
 
 
 
