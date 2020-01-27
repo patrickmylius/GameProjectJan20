@@ -29,19 +29,19 @@ many Evil puffs as possible, to avoid being overrun.
 
 ## CONTROLS
 
-**1. MOVE UP**   :  W
+**MOVE UP**   :  W
+
+**MOVE DOWN** :  S
+
+**MOVE LEFT** :  A
+
+**MOVE RIGHT**:  D
+
+**DIAGONAL MOVEMENT**
 - UP LEFT     : A + W
 - UP RIGHT    : W + D
-
-**2. MOVE DOWN** :  S
 - DOWN LEFT   : A + S
 - DOWN RIGHT  : S + D
-
-**3. MOVE LEFT** :  A
-- 
-
-**4. MOVE RIGHT**:  D
->
 
 
 
